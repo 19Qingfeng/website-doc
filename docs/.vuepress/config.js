@@ -1,5 +1,5 @@
 module.exports = {
-  base: "/docs/",
+  base: "./",
   title: "Nx-website-component",
   themeConfig: {
     editLinks: false,
