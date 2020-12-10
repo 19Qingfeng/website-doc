@@ -1,6 +1,7 @@
 module.exports = {
   base: "/docs/",
   title: "Nx-website-component",
+  dest: 'dist',
   themeConfig: {
     editLinks: false,
     docsDir: "docs",
