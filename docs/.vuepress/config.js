@@ -2,6 +2,7 @@ module.exports = {
   base: "/docs/",
   title: "Nx-website-component",
   dest: 'dist',
+  description: 'Vue component for nx-website.',
   themeConfig: {
     editLinks: false,
     docsDir: "docs",
