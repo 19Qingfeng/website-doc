@@ -4,7 +4,6 @@
 
 | name     | type     | describe  |
 | ------------- |:-------------:| -----:|
-| copyRight      |  string    | 底部 copyright。  |
 | data      |  array    | 下方   |
 | copyRight      |  string    | 底部 copyright。  |
 
@@ -26,4 +25,4 @@ props中的data。
 
 | event     | params     | describe  |
 | ------------- |:-------------:| -----:|
-| click      |   当前点击元素内容   |   |
+| click      |   ｜ 当前点击元素内容,存在link则跳转，存在email则吊起邮箱     |

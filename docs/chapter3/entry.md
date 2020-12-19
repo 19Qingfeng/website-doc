@@ -16,6 +16,11 @@
 | phoneVertIconSize，phoneHoriIconSize | 手机横/竖屏icon大小(不影响svg，仅控制icon)     |    $1 |
 | padIconSIze,pcIconSize | pad，pc 图标大小。仅仅影响 icon 不影响 svg。     |    $1 |
 | titleFontBg，bodyFontBg | 标题文字渐变色，body 文字渐变色。     |    $1 |
+| backgroundColor | 卡片背景色     |    $1 |
+| iconColor | 图标颜色     |    $1 |
+
+
+
 
 
 
@@ -40,7 +45,7 @@ Data is a object,includes some keys:
 | ------------- |:-------------:| -----:|
 | title     | 顶部文字内容 | $1600 |
 | body      | 底部文字内容|   $12 |
-| svg | 需要 svg 的图片(iconfont)。      |    $1 |
+| svg | 需要 svg 的文件名。      |    $1 |
 | icon | 字体(iconfont)      |    $1 |
 
 ::: tip

@@ -48,10 +48,19 @@ module.exports = {
         ]
       },
       {
+        title: 'NxSlide 幻灯片',
+        collapsable: false,
+        children: [
+          'chapter6/entry',
+          'chapter6/demo',
+          'chapter6/feat'
+        ]
+      },
+      {
         title: '版本记录',
         collapsable: false,
         children: [
-          'chapter6/entry'
+          'chapter7/entry'
         ]
       },
     ]

@@ -21,8 +21,8 @@ version 1.x 仅支持 Vue2.x，暂不兼容 Vue3.0 版本。
 #### 直接引入
 
 ``` js
-import webSite from "nx-website-component'
-import 'nx-website-component/lib/theme-chalk'
+import webSite from "nx-website-component"
+import 'nx-website-component/lib/theme-chalk/index.css'
 
 Vue.use(webSite)
 ```
