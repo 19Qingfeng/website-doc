@@ -63,6 +63,14 @@ module.exports = {
           'chapter7/entry'
         ]
       },
+      {
+        title: 'js',
+        collapsable: false,
+        children: [
+          'js/offset',
+          'js/client'
+        ]
+      },
     ]
   },
 };
