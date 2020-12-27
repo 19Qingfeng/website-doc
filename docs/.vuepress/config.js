@@ -68,7 +68,10 @@ module.exports = {
         collapsable: false,
         children: [
           'js/offset',
-          'js/client'
+          'js/client',
+          'js/page',
+          'js/bodyOffset',
+          'js/getSize',
         ]
       },
     ]
