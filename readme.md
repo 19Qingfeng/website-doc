@@ -1,1 +1,1 @@
-http://www.hycoding.com/
+http://www.hycoding.com/docs
