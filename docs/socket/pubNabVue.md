@@ -101,7 +101,7 @@ export default {
 
 :::
 
-## Publishing
+## $pnPublish 推送消息
 
 想 pubnab 推送消息方法。
 
@@ -125,9 +125,9 @@ this.$pnPublish(
 
 在订阅频道时，可以传递可选参数`autoload`，该值必须包含 1 到 100 之间的值，以便检索频道中发布的最后一条消息。调用`$pnGetMessage`时，将检索历史记录。您可以使用回调来知道检索过程何时完成。
 
-## Unsubscribing 取消订阅
+## $pnUnsubscribe 取消订阅
 
-`$pnUnsubscribe`进行取消订阅频道。
+`$pnUnsubscribe`进行取消订阅频道,关闭消息推送。
 
 ::: details 点击查看代码
 
@@ -139,27 +139,9 @@ this.$pnUnsubscribe({
 
 :::
 
-## Subscribe 订阅
+## $pxSubscribe 订阅频道
 
 `$pnSubscribe`方法可以订阅对应频道。
 
 > 常用于在 created 中订阅频道。
 `this.$pnSubscribe({ channels: ["wanghaoyu"], withPresence: true });`
-
-## Publish 发布
-
-`$pnPublish`发布一条消息到频道。
-
-::: details 点击查看代码
-
-```js
-this.$pnPublish(
-        { channel: "wanghaoyu", message: Date.now() },
-        (status, response) => {
-          // 第二个参数为发布消息后的callback
-          console.log("发送成功收到响应",status,response);
-        }
-);
-```
-
-:::

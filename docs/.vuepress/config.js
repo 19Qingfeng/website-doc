@@ -72,6 +72,7 @@ module.exports = {
           'js/page',
           'js/bodyOffset',
           'js/getSize',
+          'js/draggable'
         ]
       },
       {
@@ -81,7 +82,7 @@ module.exports = {
           'socket/pubNabVue',
           'socket/hello'
         ]
-      },
+      }
     ]
   },
 };
