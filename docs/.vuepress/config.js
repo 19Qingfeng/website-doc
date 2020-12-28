@@ -74,6 +74,14 @@ module.exports = {
           'js/getSize',
         ]
       },
+      {
+        title: 'web socket',
+        collapsable: false,
+        children: [
+          'socket/pubNabVue',
+          'socket/hello'
+        ]
+      },
     ]
   },
 };
