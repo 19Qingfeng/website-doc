@@ -1,6 +1,6 @@
 # pubnub-vue
 
-## $pnGetMessage
+## \$pnGetMessage
 
 使用`$pnGetMessage` 将订阅到反应性属性的通道关联起来，并在收到消息后立即开始显示这些消息。
 
@@ -21,7 +21,7 @@
 使用`$pnGetMessage`功能时，默认情况下将保留最新收到的 100 条消息。但是，当您使用附加频道时(也就是传入第三个参数)，可以更改此值\$pnGetMessage。`this.$pnGetMessage('ch1', null, 10)`
 :::
 
-## $pnGetPresence
+## \$pnGetPresence
 
 > 暂时不知道什么意思
 
@@ -36,7 +36,7 @@ this.$pnGetPresence("wanghaoyu", this.presence);
 
 :::
 
-## $pnGetStatus
+## \$pnGetStatus
 
 监听状态的监听器，通过它可以接受不同的事件。
 
@@ -101,9 +101,9 @@ export default {
 
 :::
 
-## $pnPublish 推送消息
+## \$pnPublish 推送消息
 
-想 pubnab 推送消息方法。
+使用 pubnab 推送消息方法,向频道中推送信息，
 
 | 参数           | 类型     | 需要   | 默认值    | 描述                              |
 | :------------- | :------- | :----- | :-------- | :-------------------------------- |
@@ -121,11 +121,15 @@ this.$pnPublish(
 );
 ```
 
+::: warming
+不要使用 JSON.stringify(),序列化是为您自动完成的。而是仅将完整对象作为消息有效负载传递。PubNub 为您处理一切。
+::: 
+
 ## 使用 autoload 获取历史记录
 
 在订阅频道时，可以传递可选参数`autoload`，该值必须包含 1 到 100 之间的值，以便检索频道中发布的最后一条消息。调用`$pnGetMessage`时，将检索历史记录。您可以使用回调来知道检索过程何时完成。
 
-## $pnUnsubscribe 取消订阅
+## \$pnUnsubscribe 取消订阅
 
 `$pnUnsubscribe`进行取消订阅频道,关闭消息推送。
 
@@ -139,9 +143,9 @@ this.$pnUnsubscribe({
 
 :::
 
-## $pxSubscribe 订阅频道
+## \$pxSubscribe 订阅频道
 
 `$pnSubscribe`方法可以订阅对应频道。
 
 > 常用于在 created 中订阅频道。
-`this.$pnSubscribe({ channels: ["wanghaoyu"], withPresence: true });`
+> `this.$pnSubscribe({ channels: ["wanghaoyu"], withPresence: true });`

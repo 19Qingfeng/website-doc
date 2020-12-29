@@ -82,6 +82,14 @@ module.exports = {
           'socket/pubNabVue',
           'socket/hello'
         ]
+      },
+      {
+        title: 'nodejs',
+        collapsable: false,
+        children: [
+          'nodejs/zip',
+          'nodejs/unZip'
+        ]
       }
     ]
   },
