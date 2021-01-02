@@ -1,5 +1,7 @@
 # 获取隐藏元素宽高值
 
+// 记得添加获取图片宽高！！！！！以及压缩图片等比例宽高。
+
 > offsetWidth/offsetHeight 为 0 解决办法
 > width/height属性为空字符串
 > 其实就是元素存在display:none或者元素父节点存在display为none时无法获取。

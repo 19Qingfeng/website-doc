@@ -72,7 +72,9 @@ module.exports = {
           'js/page',
           'js/bodyOffset',
           'js/getSize',
-          'js/draggable'
+          'js/draggable',
+          'js/getImgSize',
+          'js/node'
         ]
       },
       {
