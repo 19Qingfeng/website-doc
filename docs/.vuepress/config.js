@@ -77,7 +77,8 @@ module.exports = {
           'js/node',
           'js/fade',
           'js/location',
-          'js/decode'
+          'js/decode',
+          'js/urlSearchParams'
         ]
       },
       {
