@@ -75,7 +75,9 @@ module.exports = {
           'js/draggable',
           'js/getImgSize',
           'js/node',
-          'js/fade'
+          'js/fade',
+          'js/location',
+          'js/decode'
         ]
       },
       {
