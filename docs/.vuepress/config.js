@@ -69,16 +69,18 @@ module.exports = {
         children: [
           'js/offset',
           'js/client',
+          'js/scroll',
           'js/page',
           'js/bodyOffset',
           'js/getSize',
+          'js/getBoundingClientRect',
           'js/draggable',
           'js/getImgSize',
           'js/node',
           'js/fade',
           'js/location',
           'js/decode',
-          'js/urlSearchParams'
+          'js/urlSearchParams',
         ]
       },
       {

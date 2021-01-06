@@ -1,5 +1,15 @@
 # urlSearchParams
 
+::: tip
+urlSearchParams 定义了使用 URL 的查询字符串的实用方法，但它兼容性不太好。
+
+而 FormData 接口提供了一种方法，可以轻松地构造一组表示表单字段及其值的键/值对，通常用在 Post 请中。
+
+urlSearchParams 和 FormData 完全是两个不同的东西。
+
+在请求体中携带urlSearchParams时使用toString()方法转化后会得到key=value形式的参数，这和formData发送请求时携带的参数类似。但是urlSearchParams并不局限于此功能，他还提供了解析这类 queryString以及很多解析Url使用功能。
+:::
+
 ## 使用场景
 
 1. 场景一 获取浏览器地址参数
@@ -31,7 +41,12 @@ params.get(key)
 ```
 
 2. 使用 URLSearchParams 处理 axios 发送的数据
-3.
+
+URLSearchParams 顾名思义，其实就是 URL 添加查询参数。
+
+::: tip
+需要注意 xhr 发送请求时携带 URLSearchParams 时，请求头 Content-Type 通常配合 application/x-www-form-urlencoded。(axios 默认会如此处理)
+:::
 
 在我们使用 axios 和 fetch 来替换之前的 ajax 进行数据请求时，我们会遇到数据格式不一致的问题。
 
@@ -62,6 +77,7 @@ let params = new URLSearchParams();
 params.append('name', 'li lei');
 params.append('age', 18);
 
+// axios中如果传递的是一个URLSearchParams的话，那么自动会调用URLSearchParams.toString()之后进行拼接。
 axios({
     method: 'post',
     url: '/test',
