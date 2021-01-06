@@ -78,7 +78,7 @@ module.exports = {
       {
         title: "vue",
         collapsable: false,
-        children: ["vue/响应式原理", "vue/$nextTick"],
+        children: ["vue/defineReactive", "vue/$nextTick"],
       },
     ],
   },
