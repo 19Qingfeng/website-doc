@@ -1,104 +1,85 @@
 module.exports = {
   base: "/docs/",
   title: "Nx-website-component",
-  dest: 'dist',
-  description: 'Vue component for nx-website.',
+  dest: "dist",
+  description: "Vue component for nx-website.",
   themeConfig: {
     editLinks: false,
     docsDir: "docs",
     nav: [],
     sidebar: [
       {
-        title: 'Install',
+        title: "Install",
         collapsable: false,
-        children: [
-          ['chapter1/', 'Introduction'],
-          'chapter1/dev'
-        ]
+        children: [["chapter1/", "Introduction"], "chapter1/dev"],
       },
       {
-        title: 'NxBg 背景图',
+        title: "NxBg 背景图",
         collapsable: false,
-        children: [
-          'chapter2/Props&Event',
-          'chapter2/demo',
-          'chapter2/problem',
-        ]
+        children: ["chapter2/Props&Event", "chapter2/demo", "chapter2/problem"],
       },
       {
-        title: 'NxCard 卡片',
+        title: "NxCard 卡片",
         collapsable: false,
-        children: [
-          'chapter3/entry',
-          'chapter3/demo'
-        ]
+        children: ["chapter3/entry", "chapter3/demo"],
       },
       {
-        title: 'NxFooter 底部',
+        title: "NxFooter 底部",
         collapsable: false,
-        children: [
-          'chapter4/entry'
-        ]
+        children: ["chapter4/entry"],
       },
       {
-        title: 'NxArt 文章',
+        title: "NxArt 文章",
         collapsable: false,
-        children: [
-          'chapter5/entry'
-        ]
+        children: ["chapter5/entry"],
       },
       {
-        title: 'NxSlide 幻灯片',
+        title: "NxSlide 幻灯片",
         collapsable: false,
-        children: [
-          'chapter6/entry',
-          'chapter6/demo',
-          'chapter6/feat'
-        ]
+        children: ["chapter6/entry", "chapter6/demo", "chapter6/feat"],
       },
       {
-        title: '版本记录',
+        title: "版本记录",
         collapsable: false,
-        children: [
-          'chapter7/entry'
-        ]
+        children: ["chapter7/entry"],
       },
       {
-        title: 'js',
+        title: "js",
         collapsable: false,
         children: [
-          'js/offset',
-          'js/client',
-          'js/scroll',
-          'js/page',
-          'js/bodyOffset',
-          'js/getSize',
-          'js/getBoundingClientRect',
-          'js/draggable',
-          'js/getImgSize',
-          'js/node',
-          'js/fade',
-          'js/location',
-          'js/decode',
-          'js/urlSearchParams',
-        ]
+          "js/object",
+          "js/offset",
+          "js/client",
+          "js/scroll",
+          "js/page",
+          "js/bodyOffset",
+          "js/getSize",
+          "js/getBoundingClientRect",
+          "js/draggable",
+          "js/getImgSize",
+          "js/node",
+          "js/fade",
+          "js/location",
+          "js/decode",
+          "js/urlSearchParams",
+          "js/getComputedStyle",
+        ],
       },
       {
-        title: 'web socket',
+        title: "web socket",
         collapsable: false,
-        children: [
-          'socket/pubNabVue',
-          'socket/hello'
-        ]
+        children: ["socket/pubNabVue", "socket/hello"],
       },
       {
-        title: 'nodejs',
+        title: "nodejs",
         collapsable: false,
-        children: [
-          'nodejs/zip',
-          'nodejs/unZip'
-        ]
-      }
-    ]
+        children: ["nodejs/zip", "nodejs/unZip"],
+      },
+      {
+        title: "vue",
+        collapsable: false,
+        children: ["vue/响应式原理", "vue/$nextTick"],
+      },
+    ],
   },
 };
