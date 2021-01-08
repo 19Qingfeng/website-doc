@@ -1,6 +1,23 @@
 # Object 属性定义
 
-## Object.defineProperty
+::: danger 
+普通方式定义对象的时候并不存在getter和setter，直接定义了value属性。这点需要注意。
+``` js
+const obj =  { obj:'' }
+Object.getOwnPropertyDescriptor(obj,'obj')  // { value: '', writable: true, enumerable: true, configurable: true } 数据描述符
+```
+所以通过obj['obj']是可以获取到值的。
+但当
+``` js
+const obj1 = {}
+Object.defineProperty(obj1, "obj", {
+  get() {}, // 存取描述符
+});
+obj1['obj'] // undefined 因为定义的属性getter并没有返回 
+```
+:::
+
+## Object.defineProperty()
 
 Object.defineProperty() 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性，并返回此对象。
 

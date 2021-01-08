@@ -26,6 +26,8 @@ getComputedStyle 为何物呢，**DOM 中 getComputedStyle 方法可用来获取
 
 ## window.getComputedStyle
 
+### window.getComputedStyle(el).getPropertyValue(styleName)
+
 > 获取 getComputedStyle 下的单一属性值。
 
 尝试一下之后可以看到，**window.getComputedStyle 获取的是所有的样式，如果我们只是要获取单一样式，该怎么做呢。这个时候就要介绍另一个方法 -- getPropertyValue** 。
