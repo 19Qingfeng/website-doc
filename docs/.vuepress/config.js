@@ -63,7 +63,7 @@ module.exports = {
           "js/decode",
           "js/urlSearchParams",
           "js/getComputedStyle",
-          "js/videoToImg.md"
+          "js/videoToImg.md",
         ],
       },
       {
@@ -79,7 +79,11 @@ module.exports = {
       {
         title: "vue",
         collapsable: false,
-        children: ["vue/defineReactive", "vue/$nextTick"],
+        children: [
+          "vue/defineReactive",
+          "vue/$nextTick",
+          "vue-source/chapter1.md",
+        ],
       },
     ],
   },
