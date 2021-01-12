@@ -63,6 +63,7 @@ module.exports = {
           "js/decode",
           "js/urlSearchParams",
           "js/getComputedStyle",
+          "js/videoToImg.md"
         ],
       },
       {

@@ -11,10 +11,16 @@ Object.getOwnPropertyDescriptor(obj,'obj')  // { value: '', writable: true, enum
 ``` js
 const obj1 = {}
 Object.defineProperty(obj1, "obj", {
-  get() {}, // 存取描述符
+  get() {}, // 存取描述符$$
 });
 obj1['obj'] // undefined 因为定义的属性getter并没有返回 
 ```
+:::
+
+::: danger
+使用Object.defineProperty() 定义对象属性时，如已设置 set 或 get, 就不能设置 writable 和 value 中的任何一个了，不然会报错。
+
+同时初始化一个普通对象的时候，`const a = { b:1 }`,此时a.b的value为1，get和set未定义而是undefined，在进行Object.defineProperty(a,'b',{ set(){} })在进行定义get和set任意描述符时，a对象下的b属性的value描述符就会无效。
 :::
 
 ## Object.defineProperty()
