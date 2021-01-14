@@ -64,6 +64,7 @@ module.exports = {
           "js/urlSearchParams",
           "js/getComputedStyle",
           "js/videoToImg.md",
+          "js/nodeType"
         ],
       },
       {
@@ -83,6 +84,7 @@ module.exports = {
           "vue/defineReactive",
           "vue/$nextTick",
           "vue-source/chapter1.md",
+          "vue-source/chapter2.md"
         ],
       },
     ],
