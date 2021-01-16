@@ -2,6 +2,7 @@
 
 ::: tip
 runtime-only 就是只有运行时，编译是发生在 webpack 编译时候 通过 vue-loader 编译生成组件相关 JS 和 CSS，并把 template 部分转换成 render 函数添加到组件对象的属性中。(打包时已经编译好，运行时不存在 template 全是 render 函数。)
+
 runtime-compiled 是在运行时编译，组件的模板直接在组件对象 template 属性中编写，然后在运行时阶段编译生成 render 函数。(运行时可以识别 template，进行运行时编译成 render 函数渲染)
 :::
 
@@ -22,13 +23,13 @@ Vue.prototype.$mount = function(
 
 之后在每个版本下获得之前定义的 mount 方法，然后重新定义\$mount。
 
-之所以这么做是因为不同的版本下，比如 runtime-only 仅需要 runtime 中首次定义的就足够了。而 runtime-compile 版本需要在之前定义的 mount 方法上做扩展--首先将 options 中的 template 编译成 render 函数再然后调用之前定义好的\$mount 方法将 render 函数进行挂载。
+之所以这么做是因为不同的版本下，比如 runtime-only 仅需要 runtime 中首次定义的方法内容就足够了。而 runtime-compile 版本需要在之前定义的 mount 方法上做扩展--首先将 options 中的 template 编译成 render 函数再然后调用之前定义好的\$mount 方法将 render 函数进行挂载。
 
 ::: tip
 抽离公用逻辑定义公用方法，特殊模块取出公用方法。然后重新定义并且在新定义的方法中调用保存的公用逻辑进行调用。
 :::
 
-::: details runtime-compile 版本\$mount
+::: details runtime-compiled 版`$mount`
 
 ```js
 Vue.prototype.$mount = function(
@@ -145,14 +146,18 @@ if (vm.$options.el) {
 
 4. 如果拿到了 template 那么就会调用`compileToFunctions`生成对应的 render 函数以及对应的静态 render 函数。编译这块之后在看。也就是 vue 最终只认 render 函数。
 
+**当不存在 render 时，存在 template 内容且 template 合法，那么就会取 template 的 innerHTML 字符串赋值给 template 否则就会取 el 的 outerHTML 赋值给 template。**
+
 **所以当传入 template 选项和 el 选项是同一个元素的时候差距就会体现出来，template 选项是会取 innerHTML 所以要求需要 🈶️ 一个根元素包裹而取 el 的时候因为使用了 outerHTML 所以一定是会被一个根元素进行包裹的。**
 
 **要么拿到 render 函数的内容渲染到，要么拿到 template 元素的 innerHTML 内容渲染到 el 上，要么直接拿到 el 本身的 outerHTML 进行替换。**
 
-::: warn
+::: warning
 template 渲染时，只能存在一个根元素，无论是.vue 文件还是 options 中的 template 都内部都必须只有一个根元素包裹。这也就是为什么取的时候需要取 template 的 innerHTML。
+
 如果 template 存在，那么就会取 template 下的 innerHTML 进行模版编译渲染，如果不存在没有办法了所以才会尝试索取 el 的 outerHTML 作为 template(也是只有一个根元素)。最终是会将整个 el 进行替换的。
 :::
+
 
 ```js
 var idToTemplate = cached(function(id) {
@@ -175,11 +180,8 @@ function getOuterHTML(el) {
 }
 ```
 
-:::
-
 之后**调用了之前缓存的公用的\$mount 方法**进行挂载。`mount.call(this, el, hydrating);`传入了 el
 
-
 ！！！！
-5分13！
-一个问题待解决：template和el挂载为什么一个是innerHTML一个是outerHTML
+5 分 13！
+一个问题待解决：template 和 el 挂载为什么一个是 innerHTML 一个是 outerHTML

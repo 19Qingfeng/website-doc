@@ -48,6 +48,7 @@ module.exports = {
         collapsable: false,
         children: [
           "js/object",
+          "js/function",
           "js/offset",
           "js/client",
           "js/scroll",
@@ -64,7 +65,6 @@ module.exports = {
           "js/urlSearchParams",
           "js/getComputedStyle",
           "js/videoToImg.md",
-          "js/nodeType"
         ],
       },
       {
@@ -76,6 +76,11 @@ module.exports = {
         title: "nodejs",
         collapsable: false,
         children: ["nodejs/zip", "nodejs/unZip"],
+      },
+      {
+        title: "koa",
+        collapsable: false,
+        children: ["koa/core"],
       },
       {
         title: "vue",
