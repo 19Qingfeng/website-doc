@@ -48,7 +48,6 @@ module.exports = {
         collapsable: false,
         children: [
           "js/object",
-          "js/function",
           "js/offset",
           "js/client",
           "js/scroll",
@@ -66,6 +65,11 @@ module.exports = {
           "js/getComputedStyle",
           "js/videoToImg.md",
         ],
+      },
+      {
+        title: "红宝书",
+        collapsable: false,
+        children: ["redbook/function"],
       },
       {
         title: "web socket",
@@ -89,7 +93,7 @@ module.exports = {
           "vue/defineReactive",
           "vue/$nextTick",
           "vue-source/chapter1.md",
-          "vue-source/chapter2.md"
+          "vue-source/chapter2.md",
         ],
       },
     ],

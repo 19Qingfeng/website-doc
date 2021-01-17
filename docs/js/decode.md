@@ -48,3 +48,9 @@ decodeURIComponent()用于 URL 片段的解码。它是 encodeURIComponent()方�
 ```
 decodeURIComponent('%E6%98%A5%E8%8A%82') // "春节
 ```
+
+使用 encodeURI()编码后的结果是出了空格之外的其他字符都原封不懂，只有空格被替换成为%20,而 encodeURIComponent()方法则会使用对应的编码替换所有非字母数字字符。这也正是可以对整个 URI 使用 encodeURI()，因为它只对空格进行转译。而对于附加在 url 后的字符串使用 encodeURLComponent()。
+
+::: tip
+一般来说，我们使用 encodeURIComponent()方法的时候要比使用 encodeURI()更多，因为在实践中更常见的是对查询字符串参数而不是对于基础 URI 进行编码。
+:::

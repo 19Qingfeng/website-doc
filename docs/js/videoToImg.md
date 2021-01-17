@@ -89,3 +89,5 @@ export function dataURLtoFile(dataurl, filename) {
 
 ### 使用fileReader显示缩略图
 https://developer.mozilla.org/zh-CN/docs/Web/API/File/Using_files_from_web_applications#Example.3A_Using_object_URLs_to_display_images
+
+1
