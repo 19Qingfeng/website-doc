@@ -7,18 +7,17 @@
 - 继续递归向上超着 offsetParent 累加 offset，直到遇到 body 元素停止。
 
 ```js
-const offset = (Node, offset) => {
+const getOffsetSize = function(Node: any, offset?: any): any {
   if (!offset) {
-    offset = {};
-    const offset = {
+    offset = {
       x: 0,
-      y: o,
+      y: 0
     };
-    if (Node === document.body) return offset;
-    offset.x = offset.x + offsetLeft;
-    offset.y = offset.y + offsetTop;
-    return offset(Node.offsetParent, offset);
   }
+  if (Node === document.body) return offset;
+  offset.x = offset.x + Node.offsetLeft;
+  offset.y = offset.y + Node.offsetTop;
+  return getOffsetSize(Node.offsetParent, offset);
 };
 ```
 

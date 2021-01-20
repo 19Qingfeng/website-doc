@@ -64,6 +64,7 @@ module.exports = {
           "js/urlSearchParams",
           "js/getComputedStyle",
           "js/videoToImg.md",
+          'js/cloneDeep'
         ],
       },
       {
