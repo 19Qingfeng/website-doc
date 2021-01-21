@@ -32,31 +32,25 @@
 
 ```js
 // 视频 获得第一帧缩略图
-export const getPictureByVideo = (
-  file,
-  fileName = "这是文件名称.png",
-  width = 100,
-  height = 100
-) => {
-  // 创建file对象
+export const getPictureByVideo = (file, fileName = "这是文件名称.png") => {
   const url = URL.createObjectURL(file);
   let video = document.createElement("video");
   video.controls = true;
-  video.src = url;
   video.muted = true;
   // 开启自动播放
   video.autoplay = true;
+  video.src = url;
   return new Promise((resolve) => {
-    // 监听可以播放事件 当事件触发因为设置了autoplay会自动播放的 所以可以截取到
     video.oncanplay = () => {
-      const canvas = document.createElement("canvas"); //创建一个canvas
-      canvas.width = width; //canvas的宽
-      canvas.height = height; //canvas的高
+      const height = video.videoHeight;
+      const width = video.videoWidth;
+      const canvas = document.createElement("canvas");
+      canvas.width = width;
+      canvas.height = height;
       canvas
         .getContext("2d")
         .drawImage(video, 0, 0, canvas.width, canvas.height);
-      const base64Url = canvas.toDataURL("image/png"); // 图片的base64编码
-      // dataURLtoFile base64 转file对象 然后使用formData上传
+      const base64Url = canvas.toDataURL("image/png", 1);
       const file = dataURLtoFile(base64Url, fileName);
       resolve(file);
       video = null;
@@ -64,30 +58,57 @@ export const getPictureByVideo = (
     };
   });
 };
-
-// base64转file
-export function dataURLtoFile(dataurl, filename) {
-  var arr = dataurl.split(","),
-    mime = arr[0].match(/:(.*?);/)[1],
-    bstr = atob(arr[1]),
-    n = bstr.length,
-    u8arr = new Uint8Array(n);
-  while (n--) {
-    u8arr[n] = bstr.charCodeAt(n);
-  }
-  return new File([u8arr], filename, { type: mime });
-}
 ```
-
 
 ## 图片压缩算法
 
+等我总结，一样的道理。都是转 canvas 压缩。
 
-等我总结，一样的道理。都是转canvas压缩。
+## 压缩图片(尺寸以及图片)
 
-### 图片转canvas压缩
+### 图片转 canvas 压缩
 
-### 使用fileReader显示缩略图
+### 使用 fileReader 显示缩略图
+
 https://developer.mozilla.org/zh-CN/docs/Web/API/File/Using_files_from_web_applications#Example.3A_Using_object_URLs_to_display_images
 
-1
+### 仅仅缩小尺寸(单纯压缩尺寸)
+
+```js
+/**
+ * @param {String} url 图片url
+ * @param {number} max 最大尺寸
+ * @returns {Promise<height,width>}
+ * 根据URL获取图片尺寸并且等比例缩放尺寸
+ */
+const getPictureSize = (url: string, max = 10000): Promise<any> => {
+  const isImg = /\.(gif|jpg|jpeg|png|GIF|JPG|PNG|webp)$/.test(url);
+  if (!isImg) {
+    return Promise.resolve({ width: `${max}px`, height: `${max}px` });
+  }
+  const img = new Image();
+  img.src = url;
+  const compileSize = (width: number, height: number) => {
+    if (width > max || height > max) {
+      // 压缩尺寸
+      const scale = width > height ? width / max : height / max;
+      // return { width: width / scale, height: height / scale };
+      width = width / scale;
+      height = height / scale;
+      compileSize(width, height);
+    }
+    return { width, height };
+  };
+  return new Promise((resolve) => {
+    if (img.complete) {
+      const { width, height } = compileSize(img.width, img.height);
+      resolve({ width, height });
+    } else {
+      img.onload = function() {
+        const { width, height } = compileSize(img.width, img.height);
+        resolve({ width, height });
+      };
+    }
+  });
+};
+```
