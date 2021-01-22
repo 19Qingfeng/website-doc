@@ -19,6 +19,9 @@ if(flat) {
 }
 ```
 
+> 这里的条件判断`Tree Shaking`指的是代码运行时的而非用户触发一些事件引入，
+> 用户触发事件 - 动态懒加载引入脚本(模块) - Dynamic import
+> CJS无法Tree Shaking本质 - 编译代码时导出未使用的代码无法确定在执行脚本时是否使用到了。
 
 上边的Demo可以看出两者的是使用区别。
 
@@ -41,6 +44,23 @@ CommonJS支持动态(执行时)引入。
 
 而webpack在`Common js`中就不支持`Tree Shaking`，**因为CJS使用的是执行时引入，也就是只有代码执行时候才会区别出到底引入了哪些模块，所以`Tree Shaking`就很矛盾了，CJS在webpack中无法支持Tree Shaking这就是原因。**
 
-::: tip
-这里所说`Tree Shaking`无法支持`Common JS`仅仅是在`webpack`中，当我在使用`Rollup`时，使用`@rollup/plugin-commonjs`插件，发现调用`exports`使用CJS语法Rollup仍然可以帮我进行`Tree Shaking`,具体有事件研究`Rollup`中这个插件在做定论。
+在代码编译阶段并不会执行代码，所以一些模块被导出并没有在顶层声明使用但是可能会在条件判断语句(代码执行时)又会被引入。所以`Tree Shaking`和`CJS`就存在了矛盾--**编译阶段无法确定哪些无用代码在运行时候引用到了。**
+
+::: warning Dynamic import和CJS的Tree Shaking不要混淆了
+需要额外注意的是，当用户触发一些事件才引入一些模块。这是动态引入 `Dynamic import`的概念。
+
+而CJS的`Tree Shaking`是指在代码运行时一些条件下引入了导出的一些模块，而在编译时候这些模块存在导出而并没有被引入。
+:::
+
+::: tip Rollup中CJS的TreeShaking
+这里所说`Tree Shaking`无法支持`Common JS`仅仅是在`webpack`中，当我在使用`Rollup`时，使用`@rollup/plugin-commonjs`插件，发现调用`exports`使用CJS语法Rollup仍然可以帮我进行`Tree Shaking`,有时间了研究下这个插件源码。
+:::
+
+::: tip Webpack中CJS的TreeShaking
+其实`webpack`中也可以依赖一些插件使用`commonjs`进行`Tree Shaking` 也可以可以做到部分的 tree-shaking 的，例如[https://github.com/indutny/webpack-common-shake](https://github.com/indutny/webpack-common-shake)
+
+但是，因为 commonjs 毕竟是动态引入的，还是会有一些限制 [https://github.com/indutny/webpack-common-shake#limitations](https://github.com/indutny/webpack-common-shake#limitations) 。这是语法的限制，无论 webpack 和 rollup 都会有。
+
+
+另外，“当用户点击按钮触发事件的时候才会执行引入”—— 这个不是 tree-shaking ，这就是异步加载。
 :::
