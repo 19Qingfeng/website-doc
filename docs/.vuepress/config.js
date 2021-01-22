@@ -84,7 +84,7 @@ module.exports = {
       {
         title: "nodejs",
         collapsable: false,
-        children: ["base.md", "nodejs/zip", "nodejs/unZip", "nodejs/inspect"],
+        children: ["nodejs/base.md", "nodejs/zip", "nodejs/unZip", "nodejs/inspect"],
       },
       {
         title: "koa",
