@@ -67,7 +67,8 @@ module.exports = {
           "js/cloneDeep",
           "js/promise",
           "js/bind",
-          'js/eventLoop'
+          'js/modules',
+          "js/eventLoop",
         ],
       },
       {
@@ -83,7 +84,7 @@ module.exports = {
       {
         title: "nodejs",
         collapsable: false,
-        children: ["nodejs/zip", "nodejs/unZip"],
+        children: ["base.md", "nodejs/zip", "nodejs/unZip", "nodejs/inspect"],
       },
       {
         title: "koa",
