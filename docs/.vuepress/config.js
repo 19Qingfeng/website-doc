@@ -67,6 +67,7 @@ module.exports = {
           "js/cloneDeep",
           "js/promise",
           "js/bind",
+          'js/eventLoop'
         ],
       },
       {
