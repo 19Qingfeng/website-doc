@@ -1,5 +1,36 @@
 # nginx 配置 Dockerfile
 
+## Nginx 配置 options 跨域请求
+
+1. 对于复杂请求 NGINX 上需要额外配置 options 处理
+
+2. 对于请求中虽然配置了`Access-Control-allow-origin:*`但是仍然不行。
+
+此时一定要注意看报错信息，跨域错误信息。
+因为跨域出了域名不允许，还有方式，还有请求表头跨域拒绝。。一系列拒绝问题，所以还有许多`nginx`中配置的头的跨域问题。
+
+比如提示报错`Request header field content-type is not allowed by Access-Control-Allow-Headers in preflight response.`此时跨域被拒绝，是因为请求头中`Content-Type`需要跨域请求配置允许的方式。
+
+```nginx
+location /api {
+                proxy_pass http://b.com/;
+                # 设置是否允许 cookie 传输
+                add_header Access-Control-Allow-Credentials true;
+                # 允许请求地址跨域 * 做为通配符
+                add_header Access-Control-Allow-Origin *;
+                # 允许跨域的请求方法
+                add_header Access-Control-Allow-Methods 'GET, POST, PUT, DELETE, OPTIONS';
+                # 请求头
+                add_header Access-Control-Allow-Headers 'DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization';
+
+                 if ($request_method = 'OPTIONS') {
+                         return 204;
+                 }
+        }
+```
+
+## docker 配置
+
 ```dockerfile
 # build stage
 FROM node:12 as build-stage

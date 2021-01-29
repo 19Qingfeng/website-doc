@@ -54,6 +54,12 @@ import { NxCard } from "nx-website-component";
 Vue.use(NxCard);
 ```
 
+#### Iconfont
+
+```
+//at.alicdn.com/t/font_2224678_csmx2tf7ooo.css
+```
+
 #### 响应式配置
 
 ```js

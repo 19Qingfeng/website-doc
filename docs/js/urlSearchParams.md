@@ -1,5 +1,7 @@
 # urlSearchParams
 
+**!!!会自动转译,decodeURL**等我验证，应该是
+
 ::: tip
 urlSearchParams 定义了使用 URL 的查询字符串的实用方法，但它兼容性不太好。
 

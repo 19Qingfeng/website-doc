@@ -44,6 +44,16 @@ module.exports = {
         children: ["chapter7/entry"],
       },
       {
+        title: "HTTP",
+        collapsable: false,
+        children: ["http/diff"],
+      },
+      {
+        title: "CSS",
+        collapsable: false,
+        children: ["css/GPU", "css/backflow"],
+      },
+      {
         title: "js",
         collapsable: false,
         children: [
@@ -67,14 +77,19 @@ module.exports = {
           "js/cloneDeep",
           "js/promise",
           "js/bind",
-          'js/modules',
+          "js/modules",
           "js/eventLoop",
+          "js/requestAnimationFrame",
         ],
       },
       {
         title: "红宝书",
         collapsable: false,
-        children: ["redbook/function"],
+        children: [
+          "redbook/function",
+          "redbook/designMode",
+          "redbook/packingType",
+        ],
       },
       {
         title: "web socket",
@@ -84,7 +99,22 @@ module.exports = {
       {
         title: "nodejs",
         collapsable: false,
-        children: ["nodejs/base.md", "nodejs/zip", "nodejs/unZip", "nodejs/inspect"],
+        children: [
+          "nodejs/base.md",
+          "nodejs/zip",
+          "nodejs/unZip",
+          "nodejs/inspect",
+        ],
+      },
+      {
+        title: "perfect",
+        collapsable: false,
+        children: [
+          "performance/target.md",
+          "performance/RAIL",
+          "performance/webPageTest",
+          "performance/lightHouse"
+        ],
       },
       {
         title: "koa",

@@ -1,5 +1,7 @@
 # 设计模式
 
+> 红宝书更新ing
+
 ## 工厂模式
 
 ```js
@@ -111,7 +113,7 @@ person.__proto__ === Person.prototype; // true
 ES5 中新增加了一个方法，`Object.getPrototypeOf()`这个方法返回\[\[Prototype\]\]的值。
 
 ```js
-Object.getPrototypeOf(person1) === Person.prototype(); // true
+Object.getPrototypeOf(person1) === Person.prototype; // true
 Object.getPrototypeOf(person1).name; // 'wang.haoyu'
 ```
 
@@ -151,3 +153,37 @@ person.age = 23;
 person.hasOwnProperty(name); // false name是原型对象上的属性
 person.hasOwnProperty(age); // true age是实例对象上的属性
 ```
+
+#### in 操作符
+
+两种方式使用`in`操作符，一种是单独使用一种是`for in`中。
+
+`in`操作符会在通过对象能够访问给定属性时候返回`true`(包括检测对象原型上的属性).
+
+`for in`操作符返回的是所有能够通过对象访问的，可枚举的属性，其中既包括存在实例的属性也包括存在原型上的属性。
+
+> 所以`for in`可以访问到对象上所有的实例属性和原型属性和 in 操作符一致。
+> 区别是`in`可以检测自身属性上配置为不可枚举的属性，而`for in`对于自身属性(非原型上的属性)当不可枚举时检测不到。
+
+::: warning for in 和in操作符还是有一定的区别的
+对于原型上即便配置为不可枚举的属性，单独通过`in`是可以检测到的，也就是`for in`
+:::
+
+::: tip 通过`in`操作符和`hasOwnProperty()`方法可以检测属性究竟是存在自身还是原型上
+
+```js
+function hasPrototypeProperty(key, obj) {
+  return key in obj && !obj.hasOwnProperty(key);
+}
+```
+
+:::
+
+
++ for in 
+
++ Object.keys
+
++ Reflect.onwKeys()
+
++ Object.getOwnPropertyNames()

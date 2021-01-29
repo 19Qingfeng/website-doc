@@ -2,6 +2,8 @@
 
 ::: danger 
 普通方式定义对象的时候并不存在getter和setter，直接定义了value属性。这点需要注意。
+
+以及注意API上区别自有属性和非自有属性,比如原型上的属性和自身的属性获取方式就不同。
 ``` js
 const obj =  { obj:'' }
 Object.getOwnPropertyDescriptor(obj,'obj')  // { value: '', writable: true, enumerable: true, configurable: true } 数据描述符
@@ -14,6 +16,12 @@ Object.defineProperty(obj1, "obj", {
   get() {}, // 存取描述符$$
 });
 obj1['obj'] // undefined 因为定义的属性getter并没有返回 
+
+
+// 检查原型上的描述符
+Object.getOwnPropertyDescriptor(Person.prototype, "toStringa"));
+// 检查自身属性上的描述符
+Object.getOwnPropertyDescriptor(Person, "toStringa"));
 ```
 :::
 
@@ -91,7 +99,7 @@ Object.defineProperty(object, propertyName, descriptor) 定义新属性时，des
 
 ## Object.getOwnPropertyDescriptor()
 
-Object.getOwnPropertyDescriptor() 方法返回**指定对象上一个自有属性对应的属性描述符**。（自有属性指的是直接赋予该对象的属性，不需要从原型链上进行查找的属性）
+Object.getOwnPropertyDescriptor() 方法返回**指定对象上一个**自有属性**对应的属性描述符**。（自有属性指的是直接赋予该对象的属性，不需要从原型链上进行查找的属性）
 
 ```js
 const object1 = {
