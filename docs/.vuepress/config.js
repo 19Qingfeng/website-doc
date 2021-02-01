@@ -54,6 +54,11 @@ module.exports = {
         children: ["css/GPU", "css/backflow"],
       },
       {
+        title: "浏览器性能优化",
+        collapsable: false,
+        children: ["browser/chapter1.md", "browser/chapter2.md"],
+      },
+      {
         title: "js",
         collapsable: false,
         children: [
@@ -113,7 +118,9 @@ module.exports = {
           "performance/target.md",
           "performance/RAIL",
           "performance/webPageTest",
-          "performance/lightHouse"
+          "performance/lightHouse",
+          "performance/apis",
+          "performance/Rendering",
         ],
       },
       {
