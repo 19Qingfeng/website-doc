@@ -31,6 +31,7 @@
 
 ## 避免布局抖动 layout thrashing
 
+> 布局抖动其实就是连续不断的发生布局`layout`的回流，连续不断的`forced layout`强制布局就会导致页面抖动从而造成卡顿。
 > 所谓的布局抖动通过一个 Demo 就可以很好的看到了。
 
 ::: details
