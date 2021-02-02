@@ -56,7 +56,13 @@ module.exports = {
       {
         title: "浏览器性能优化",
         collapsable: false,
-        children: ["browser/chapter1.md", "browser/chapter2.md"],
+        children: [
+          "browser/chapter1.md",
+          "browser/chapter2.md",
+          "browser/chapter3.md",
+          "browser/chapter4.md",
+          "browser/chapter5.md",
+        ],
       },
       {
         title: "js",
