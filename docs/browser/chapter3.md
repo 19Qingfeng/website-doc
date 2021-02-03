@@ -1,4 +1,4 @@
-# 避免回流
+# 使用 fastdom 解决布局抖动
 
 避免回流主要考虑两点
 
@@ -14,14 +14,17 @@
 
 ### FastDom
 
-
 [fastDom](https://github.com/wilsonpage/fastdom)
 
 `fastDom`就是针对读写分离的库，当然也可以选择自己做。
 
 当使用 fastDom 改写之前的 Demo 之后可以明显看到性能的区别以及页面更加流程
 
->  使用`fastdom.measure`批量读取操作，然后在通过`fastdom.mutate`进行批量写。
+> 使用`fastdom.measure`批量读取操作，然后在通过`fastdom.mutate`进行批量写。
+
+> 使用`fastdom`就可以解决布局抖动，因为可以合并读和写，将多次 layout 让浏览器自动合并。
+
+> 在必须要进行频繁的 DOM 操作时，可以使用 fastdom 这样的工具，它的思路是将对页面的读取和改写放进队列，在页面重绘的时候批量执行，先进行读取后改写。因为如果将读取与改写交织在一起可能引起多次页面的重排。而利用 fastdom 就可以避免这样的情况发生。
 
 ::: details
 
@@ -107,4 +110,3 @@
 ```
 
 :::
-

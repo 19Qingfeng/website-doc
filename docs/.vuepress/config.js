@@ -75,6 +75,7 @@ module.exports = {
           "js/page",
           "js/bodyOffset",
           "js/getSize",
+          "js/notification",
           "js/getBoundingClientRect",
           "js/draggable",
           "js/getImgSize",
