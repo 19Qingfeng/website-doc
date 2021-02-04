@@ -62,6 +62,8 @@ module.exports = {
           "browser/chapter3.md",
           "browser/chapter4.md",
           "browser/chapter5.md",
+          "browser/chapter6.md",
+
         ],
       },
       {
