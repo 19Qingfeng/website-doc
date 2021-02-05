@@ -31,3 +31,33 @@
 
 将真正需要的提取的提取成单独图层进行 GPU 加速渲染。
 :::
+
+## 正确使用`will-change`
+
+下面是另一个展示如何使用脚本正确地应用 will-change 属性的示例，在大部分的场景中，你都应该这样做。
+
+```
+var el = document.getElementById('element');
+
+// 当鼠标移动到该元素上时给该元素设置 will-change 属性
+el.addEventListener('mouseenter', hintBrowser);
+// 当 CSS 动画结束后清除 will-change 属性
+el.addEventListener('animationEnd', removeHint);
+
+function hintBrowser() {
+  // 填写上那些你知道的，会在 CSS 动画中发生改变的 CSS 属性名们
+  this.style.willChange = 'transform, opacity';
+}
+
+function removeHint() {
+  this.style.willChange = 'auto';
+}
+```
+
+但是，如果某个应用在按下键盘的时候会翻页，比如相册或者幻灯片一类的，它的页面很大很复杂，此时在样式表中写上 will-change 是合适的。这会使浏览器提前准备好过渡动画，当键盘按下的时候就能立即看到灵活轻快的动画。
+
+```
+.slide {
+  will-change: transform;
+}
+```

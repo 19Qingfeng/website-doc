@@ -31,6 +31,8 @@
 
 - `composite`进行复合图层，将不同的图层联系起来。
 
+> `layout`和`paint`是2个关键的性能消耗环节。而l`layout thrashing`发生的根本原因还是不停强制进行layout造成的(**让浏览器不停的强制触发布局-forcedReflow-layoutThrashing**)。
+
 首次渲染必须经过这五个步骤进行处理。之后每一次样式的变化理论上会都会经历。
 
 **但是有一些样式的变化并不会影响布局`layout`和`paint`**,所以浏览器进行了优化，如果是这样的样式那么就不进行`layout`和`paint`，这样就大大加快了渲染速度。（注意日常开发中配合`will-change属性`）

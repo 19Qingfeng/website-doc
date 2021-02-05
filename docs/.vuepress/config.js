@@ -63,6 +63,8 @@ module.exports = {
           "browser/chapter4.md",
           "browser/chapter5.md",
           "browser/chapter6.md",
+          "browser/chapter7.md",
+
 
         ],
       },
@@ -85,6 +87,7 @@ module.exports = {
           "js/fade",
           "js/location",
           "js/decode",
+          'js/loadingImg',
           "js/urlSearchParams",
           "js/getComputedStyle",
           "js/videoToImg.md",
