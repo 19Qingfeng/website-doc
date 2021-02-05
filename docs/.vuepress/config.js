@@ -54,7 +54,7 @@ module.exports = {
         children: ["css/GPU", "css/backflow"],
       },
       {
-        title: "浏览器性能优化",
+        title: "渲染优化",
         collapsable: false,
         children: [
           "browser/chapter1.md",
@@ -64,8 +64,14 @@ module.exports = {
           "browser/chapter5.md",
           "browser/chapter6.md",
           "browser/chapter7.md",
-
-
+        ],
+      },
+      {
+        title: "代码优化",
+        collapsable: false,
+        children: [
+          "jsOptimization/chapter1.md",
+          "jsOptimization/chapter2.md",
         ],
       },
       {
