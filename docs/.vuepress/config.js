@@ -67,12 +67,38 @@ module.exports = {
         ],
       },
       {
+        title: "HTML&CSS优化",
+        collapsable: false,
+        children: [
+          "htmlOptimization/chapter1.md",
+          "htmlOptimization/chapter2.md",
+        ],
+      },
+      {
         title: "代码优化",
         collapsable: false,
         children: [
           "jsOptimization/chapter1.md",
           "jsOptimization/chapter2.md",
+          "jsOptimization/chapter3.md",
+          "jsOptimization/chapter4.md",
         ],
+      },
+      {
+        title: "资源压缩",
+        collapsable: false,
+        children: [
+          "sourcelOptimization/chapter1.md",
+          "sourcelOptimization/chapter2.md",
+        ],
+      },
+      {
+        title:"Webpack优化",
+        collapsable: false,
+        children: [
+          "webpack/chapter1.md",
+          "webpack/chapter2.md",
+        ]
       },
       {
         title: "js",
@@ -93,7 +119,7 @@ module.exports = {
           "js/fade",
           "js/location",
           "js/decode",
-          'js/loadingImg',
+          "js/loadingImg",
           "js/urlSearchParams",
           "js/getComputedStyle",
           "js/videoToImg.md",
