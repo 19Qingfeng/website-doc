@@ -31,3 +31,5 @@
 :::
 
 ## dllPlugin
+
+基于dllPlugin在develop模式提升构建速度。
