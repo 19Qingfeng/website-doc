@@ -99,6 +99,7 @@ module.exports = {
           "webpack/chapter1.md",
           "webpack/chapter2.md",
           "webpack/chapter3.md",
+          "webpack/chapter4.md",
         ]
       },
       {
