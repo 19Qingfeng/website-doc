@@ -100,6 +100,19 @@ public/index.html
 
 #### Vue Cli 3+
 
+##### 字体文件配置
+
+```js
+// vue.config.js
+chainWebpack: (config) => {
+  const fileRule = config.module.rule("file");
+  fileRule
+    .test(/\.ttc$/)
+    .use("file-loader")
+    .loader("file-loader");
+};
+```
+
 ##### 引入源码版本(兼容低版本 IE)
 
 ::: details
