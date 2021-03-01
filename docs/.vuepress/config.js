@@ -101,6 +101,7 @@ module.exports = {
           "webpack/chapter3.md",
           "webpack/chapter4.md",
           "webpack/chapter5.md",
+          "webpack/chapter6.md",
         ]
       },
       {
