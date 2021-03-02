@@ -108,7 +108,8 @@ module.exports = {
         title:"传输加载优化",
         collapsable: false,
         children: [
-          "transmission/chapter1.md"
+          "transmission/chapter1.md",
+          "transmission/chapter2.md"
         ]
       },
       {
