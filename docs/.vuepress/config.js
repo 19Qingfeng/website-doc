@@ -110,7 +110,9 @@ module.exports = {
         children: [
           "transmission/chapter1.md",
           "transmission/chapter2.md",
-          "transmission/chapter3.md"
+          "transmission/chapter3.md",
+          "transmission/chapter4.md",
+          "transmission/chapter5.md",
         ]
       },
       {
