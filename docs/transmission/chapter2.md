@@ -37,9 +37,9 @@
 
 可以根据项目进行设置比如`keepalive_timeout: 65;` 表示 65s 下如果没有使用`TCP`链接了那么就会断开关闭它。
 
-#### keepalive_request
+#### keepalive_requests
 
-`keepalive_request 100;`
+`keepalive_requests 100;`
 
 这个值的意思是说，当客户端和服务端建立起来一个`TCP`链接之后它会建立一个计数器，也就是**利用当前已经建立的`TCP`链接一共可以发送多少个请求。**
 
@@ -86,7 +86,7 @@ http {
     #keepalive_timeout  0;
     keepalive_timeout  65; # 秒单位
 
-    keepalive_request 1000; # keepAlive 建立保持链接数量 超过则断开重新建立
+    keepalive_requests 1000; # keepAlive 建立保持链接数量 超过则断开重新建立
 
     gzip  on; # 启动gzip
 

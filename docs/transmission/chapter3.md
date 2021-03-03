@@ -1,6 +1,5 @@
 # HTTP 资源缓存
 
-
 > [HTTP 缓存](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching)本质上就是为了提高资源重复访问的速度。
 
 |              | **获取资源形式** | **状态码**          | **发送请求到服务器**                       |
@@ -24,7 +23,7 @@ Cache-Control 叫做强缓存。
 
   * no-store：直接禁止游览器缓存数据，每次用户请求该资源，都会向服务器发送一个请求，每次都会下载完整的资源。
 
-  * public：可以被所有的用户缓存，包括终端用户和 CDN 等中间代理服务器(service worker缓存)。
+  * public：可以被所有的用户缓存，包括终端用户和 CDN 等中间代理服务器(service worker 缓存)。
 
   * private：只能被终端用户的浏览器缓存，不允许 CDN 等中继缓存服务器对其缓存。
 
@@ -69,14 +68,19 @@ Cache-Control 叫做强缓存。
 
 ### html
 
-```
+```JS
  # 缓存配置
-            if($request_filename ~* .*\.(?:htm|html)$)
-            {
-                add_header Cache-Control "no-cache,must-revalidate";
+         if ($request_filename ~* .*\.(?:htm|html)$)
+
+              {
+
+                add_header Cache-Control "no-cache, must-revalidate";
+
                 add_header "Pragma" "no-cache";
+
                 add_header "Expires" "0";
-            }
+
+              }
 ```
 
 关于有关 html 文件的请求，一般我们都不希望`html`缓存。因为传统单页面前端应用，当`html`发生改变的时候我们都是希望它可以及时更新，(否则 html 缓存住了使用的旧的资源路径就展示的还是旧的页面)。
@@ -88,10 +92,14 @@ Cache-Control 叫做强缓存。
 ### JS&CSS
 
 ```
-if($request_filename ~* .*\.(?:js|css)$)
-            {
-                expires 7d; # js css 文件7天过期时间 强缓存
-            }
+
+if ($request_filename ~* .*\.(?:js|css)$)
+
+              {
+
+                expires      7d;
+
+              }
 ```
 
 这里的意思是说对于`css`和`js`文件服务器告诉浏览器，强制缓存 7 天的时间。当然这个时间可以跟随项目实际情况进行设置。
@@ -101,7 +109,7 @@ if($request_filename ~* .*\.(?:js|css)$)
 ### 图片/视频
 
 ```
- if ($request_filename ~* .*\.(?:jpg|jpeg|gif|png|ico|cur|gz|svg|svgz|mp4|ogg|ogv|webm)$)
+  if ($request_filename ~* .*\.(?:jpg|jpeg|gif|png|ico|cur|gz|svg|svgz|mp4|ogg|ogv|webm)$)
 
               {
 
