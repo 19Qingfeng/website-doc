@@ -109,7 +109,8 @@ module.exports = {
         collapsable: false,
         children: [
           "transmission/chapter1.md",
-          "transmission/chapter2.md"
+          "transmission/chapter2.md",
+          "transmission/chapter3.md"
         ]
       },
       {
