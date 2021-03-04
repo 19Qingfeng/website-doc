@@ -93,3 +93,12 @@ function updateValue() {
 
 这种没有强制规则，根据自己的编程习惯选择方法。
 :::
+
+![企业微信截图_906e74f6-c4ae-4d70-93f6-38dac6a7a012.png](https://i.loli.net/2021/03/04/87yhXMVPErBsDnf.png)
+
+> 额外注意下，`composition Api`中不存在 `created`和`beforeCreated`这两个生命周期，因为`setup`函数的周期和这两个函数的周期特别相近，所以直接写在`setup`中就可以了。
+
+> onUpdated 在页面数据变化之后就会触发，比如事件触发数据改变页面渲染，或者`onMounted`中改变数据导致页面刷新也会触发。
+> **页面数据刷新改变**，首次渲染不会触发`onUpdated`，所以`created`中`setup`中都不会触发的。
+
+> vue3额外增加了两个生命周期，`onRenderTracked`和`onRenderTriggered`用于调试，接受一个参数，这个参数可以查看关于数据改变产生渲染的数据详情。
