@@ -30,6 +30,24 @@ http2 只能跑在 https 协议下。
 
 `openssl x509 -req -sha256 -days 3650 -in server.csr -signkey server.key -out server.crt`
 
+根据上述四条命令生成自签发的 SSL 证书。
+
+然后在 nginx 中进行配置生成的证书地址就可以了
+
+```
+        # 开启HTTPS
+        ssl on;
+
+        ssl_certificate      /Users/wanghaoyu/coder/crt/server.crt;
+        ssl_certificate_key  /Users/wanghaoyu/coder/crt/server.key;
+
+        ssl_session_cache    shared:SSL:1m;
+        ssl_session_timeout  5m;
+
+        ssl_ciphers  HIGH:!aNULL:!MD5;
+        ssl_prefer_server_ciphers  on;
+```
+
 #### Nginx 配置
 
 - Server Push

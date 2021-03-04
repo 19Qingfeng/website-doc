@@ -93,7 +93,7 @@ module.exports = {
         ],
       },
       {
-        title:"Webpack优化",
+        title: "Webpack优化",
         collapsable: false,
         children: [
           "webpack/chapter1.md",
@@ -102,10 +102,10 @@ module.exports = {
           "webpack/chapter4.md",
           "webpack/chapter5.md",
           "webpack/chapter6.md",
-        ]
+        ],
       },
       {
-        title:"传输加载优化",
+        title: "传输加载优化",
         collapsable: false,
         children: [
           "transmission/chapter1.md",
@@ -113,7 +113,7 @@ module.exports = {
           "transmission/chapter3.md",
           "transmission/chapter4.md",
           "transmission/chapter5.md",
-        ]
+        ],
       },
       {
         title: "js",
@@ -196,6 +196,11 @@ module.exports = {
           "vue-source/chapter1.md",
           "vue-source/chapter2.md",
         ],
+      },
+      {
+        title: "vue3",
+        collapsable: false,
+        children: ["vue3/chapter"],
       },
     ],
   },
