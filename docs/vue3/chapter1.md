@@ -92,7 +92,13 @@ function updateValue() {
 当然也可以全部使用`reactive`，也配合需要`toRefs`方法。
 
 这种没有强制规则，根据自己的编程习惯选择方法。
+
+https://juejin.cn/post/6860349065742745613#heading-5
 :::
+
+> ref 在源代码中其实使用的是 reactive 的代码。所以其实它两确实是可以混用的。
+
+> 其实它两看成 js 中的 原始类型（ref）和引用类型 （reacitve），**reacitve 而且是不能接受一个原始类型作为参数的。**所以这两个不同的 API 其实创造了两种使用的语境。
 
 ![企业微信截图_906e74f6-c4ae-4d70-93f6-38dac6a7a012.png](https://i.loli.net/2021/03/04/87yhXMVPErBsDnf.png)
 
@@ -101,4 +107,4 @@ function updateValue() {
 > onUpdated 在页面数据变化之后就会触发，比如事件触发数据改变页面渲染，或者`onMounted`中改变数据导致页面刷新也会触发。
 > **页面数据刷新改变**，首次渲染不会触发`onUpdated`，所以`created`中`setup`中都不会触发的。
 
-> vue3额外增加了两个生命周期，`onRenderTracked`和`onRenderTriggered`用于调试，接受一个参数，这个参数可以查看关于数据改变产生渲染的数据详情。
+> vue3 额外增加了两个生命周期，`onRenderTracked`和`onRenderTriggered`用于调试，接受一个参数，这个参数可以查看关于数据改变产生渲染的数据详情。
