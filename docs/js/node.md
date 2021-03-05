@@ -75,6 +75,16 @@ childNodes 属性返回包含被选节点的子节点的 NodeList。
 需要额外注意的是 childNodes 也包含返回的文本节点
 :::
 
+## Node.contains
+
+`Node.contains()`返回的是一个布尔值，来表示传入的节点是否为该节点的后代节点。
+`node.contains( otherNode )`
+
+- node 是否包含 otherNode 节点.
+- otherNode 是否是 node 的后代节点.
+
+如果 otherNode 是 node 的后代节点或是 node 节点本身.则返回 true , 否则返回 false.
+
 ## dom.cloneNode
 
 cloneNode() 方法可创建指定的节点的精确拷贝。
