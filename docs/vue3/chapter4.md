@@ -269,12 +269,52 @@ app.mount("#app");
 
 ![成功了！](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/99c89addbca6479a8d6e95e399fed028~tplv-k3u1fbpfcp-zoom-1.image)
 
+> 在使用`modules`使就可以正常使用了。
+
+```js
+import { testData, testPosts, ColumnProps, PostProps } from "../../mock/column";
+import { StateType } from "../types/index";
+import { Module } from "vuex";
+
+export interface HomeState {
+  column: ColumnProps[];
+  testPosts: PostProps[];
+}
+
+// 这里注意下 关于`module`直接使用这样的写法 而不是单独拆开来写
+// 否则就无法让TS进行类型推断
+const module: Module<HomeState, StateType> = {
+  namespaced: true,
+  state: {
+    column: testData, // 专栏
+    testPosts: testPosts, // 列表
+  },
+  mutations: {},
+  actions: {},
+};
+
+export default module;
+
+/* TS无法正确进行类型推断state，和mutations的参数 以及actions的参数 需要手动声明类型 */
+
+const state = {};
+
+const mutations = {};
+
+const actions = {};
+
+const module: Module<HomeState, StateType> = {
+  namespaced: true,
+  state,
+  mutations,
+  actions,
+};
+```
+
 ::: warning
-上述结合 TS 有两个问题
+上述结合 TS 有个问题
 
 1. `module`中嵌套`module`的话仍然会导致`vuex4`类型推断错误，目前来说，我们只有将子 module 统一提至根 module，意思就是不要在 module 里面嵌套 module。
 
-2. 上边的配置仅仅能够解决在`compositionApi`中使用`vuex`的值会进行类型提示和推断，如果在`vuex`中的`action`或者`mutation`中的参数仍然无法进行类型推断，需要额外进行一些系列配置。
-
-> 针对上述这两个问题，目前都提出来对于`vuex4`版本对于`ts`的不友好性能。
+> 针对上述这问题，目前都提出来对于`vuex4`版本对于`ts`的不友好性能。
 > :::
