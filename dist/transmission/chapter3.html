@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>HTTP 资源缓存 | Nx-website-component</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    
+    <meta name="description" content="Vue component for nx-website.">
+    
+    <link rel="preload" href="/docs/assets/css/0.styles.80adea03.css" as="style"><link rel="preload" href="/docs/assets/js/app.990234d8.js" as="script"><link rel="preload" href="/docs/assets/js/2.f0b9337b.js" as="script"><link rel="preload" href="/docs/assets/js/88.630f83d1.js" as="script"><link rel="prefetch" href="/docs/assets/js/10.d268db80.js"><link rel="prefetch" href="/docs/assets/js/100.819c4aa4.js"><link rel="prefetch" href="/docs/assets/js/101.e405d475.js"><link rel="prefetch" href="/docs/assets/js/102.8ac9accb.js"><link rel="prefetch" href="/docs/assets/js/103.f0e47496.js"><link rel="prefetch" href="/docs/assets/js/104.4c6028fc.js"><link rel="prefetch" href="/docs/assets/js/105.2ea62fdb.js"><link rel="prefetch" href="/docs/assets/js/106.aba071a0.js"><link rel="prefetch" href="/docs/assets/js/11.e79ee5a5.js"><link rel="prefetch" href="/docs/assets/js/12.51a23bac.js"><link rel="prefetch" href="/docs/assets/js/13.3f8f380c.js"><link rel="prefetch" href="/docs/assets/js/14.c010753d.js"><link rel="prefetch" href="/docs/assets/js/15.d633fc06.js"><link rel="prefetch" href="/docs/assets/js/16.89e7c0ea.js"><link rel="prefetch" href="/docs/assets/js/17.b3ebb8fb.js"><link rel="prefetch" href="/docs/assets/js/18.1b940f76.js"><link rel="prefetch" href="/docs/assets/js/19.592ec561.js"><link rel="prefetch" href="/docs/assets/js/20.7091aae7.js"><link rel="prefetch" href="/docs/assets/js/21.3272d07c.js"><link rel="prefetch" href="/docs/assets/js/22.3cb57d56.js"><link rel="prefetch" href="/docs/assets/js/23.e8968a1a.js"><link rel="prefetch" href="/docs/assets/js/24.6a60dda8.js"><link rel="prefetch" href="/docs/assets/js/25.03611944.js"><link rel="prefetch" href="/docs/assets/js/26.27da61c3.js"><link rel="prefetch" href="/docs/assets/js/27.cdc87a5a.js"><link rel="prefetch" href="/docs/assets/js/28.4a0b9b9c.js"><link rel="prefetch" href="/docs/assets/js/29.8ca09495.js"><link rel="prefetch" href="/docs/assets/js/3.ed0bb01c.js"><link rel="prefetch" href="/docs/assets/js/30.c0c8d56f.js"><link rel="prefetch" href="/docs/assets/js/31.6bebe365.js"><link rel="prefetch" href="/docs/assets/js/32.cbcd32b7.js"><link rel="prefetch" href="/docs/assets/js/33.d53bb891.js"><link rel="prefetch" href="/docs/assets/js/34.4d45fefe.js"><link rel="prefetch" href="/docs/assets/js/35.7af951e9.js"><link rel="prefetch" href="/docs/assets/js/36.ac967831.js"><link rel="prefetch" href="/docs/assets/js/37.7f749d81.js"><link rel="prefetch" href="/docs/assets/js/38.5f438edc.js"><link rel="prefetch" href="/docs/assets/js/39.74025a04.js"><link rel="prefetch" href="/docs/assets/js/4.09fd2c39.js"><link rel="prefetch" href="/docs/assets/js/40.1f00e8fd.js"><link rel="prefetch" href="/docs/assets/js/41.33f7ad76.js"><link rel="prefetch" href="/docs/assets/js/42.013c2bc8.js"><link rel="prefetch" href="/docs/assets/js/43.cc471e77.js"><link rel="prefetch" href="/docs/assets/js/44.d64881fe.js"><link rel="prefetch" href="/docs/assets/js/45.f8b01359.js"><link rel="prefetch" href="/docs/assets/js/46.d34098b5.js"><link rel="prefetch" href="/docs/assets/js/47.ad9c33b0.js"><link rel="prefetch" href="/docs/assets/js/48.1079465d.js"><link rel="prefetch" href="/docs/assets/js/49.5f6515e4.js"><link rel="prefetch" href="/docs/assets/js/5.fc791712.js"><link rel="prefetch" href="/docs/assets/js/50.b9649696.js"><link rel="prefetch" href="/docs/assets/js/51.fbc5ab54.js"><link rel="prefetch" href="/docs/assets/js/52.5e62e20f.js"><link rel="prefetch" href="/docs/assets/js/53.4e9dcef9.js"><link rel="prefetch" href="/docs/assets/js/54.bf7893d6.js"><link rel="prefetch" href="/docs/assets/js/55.82054f36.js"><link rel="prefetch" href="/docs/assets/js/56.57ac9991.js"><link rel="prefetch" href="/docs/assets/js/57.419b5287.js"><link rel="prefetch" href="/docs/assets/js/58.56d29c73.js"><link rel="prefetch" href="/docs/assets/js/59.69f680a1.js"><link rel="prefetch" href="/docs/assets/js/6.ffe6f60a.js"><link rel="prefetch" href="/docs/assets/js/60.5f3d2ade.js"><link rel="prefetch" href="/docs/assets/js/61.1d242fec.js"><link rel="prefetch" href="/docs/assets/js/62.7df5ef18.js"><link rel="prefetch" href="/docs/assets/js/63.3b3ebe2a.js"><link rel="prefetch" href="/docs/assets/js/64.9fcb0e18.js"><link rel="prefetch" href="/docs/assets/js/65.fe4dc22d.js"><link rel="prefetch" href="/docs/assets/js/66.fe9ad9ec.js"><link rel="prefetch" href="/docs/assets/js/67.e32f00f5.js"><link rel="prefetch" href="/docs/assets/js/68.25a23727.js"><link rel="prefetch" href="/docs/assets/js/69.202aabf6.js"><link rel="prefetch" href="/docs/assets/js/7.4bcf017a.js"><link rel="prefetch" href="/docs/assets/js/70.d14baf18.js"><link rel="prefetch" href="/docs/assets/js/71.49129d0f.js"><link rel="prefetch" href="/docs/assets/js/72.ac433741.js"><link rel="prefetch" href="/docs/assets/js/73.5c3476a7.js"><link rel="prefetch" href="/docs/assets/js/74.5dec102b.js"><link rel="prefetch" href="/docs/assets/js/75.5d358bae.js"><link rel="prefetch" href="/docs/assets/js/76.95ac41da.js"><link rel="prefetch" href="/docs/assets/js/77.dd37893b.js"><link rel="prefetch" href="/docs/assets/js/78.6071aee7.js"><link rel="prefetch" href="/docs/assets/js/79.a085986f.js"><link rel="prefetch" href="/docs/assets/js/8.a7519bef.js"><link rel="prefetch" href="/docs/assets/js/80.a544bf15.js"><link rel="prefetch" href="/docs/assets/js/81.09c39bda.js"><link rel="prefetch" href="/docs/assets/js/82.c169c6cb.js"><link rel="prefetch" href="/docs/assets/js/83.77f3314b.js"><link rel="prefetch" href="/docs/assets/js/84.71937cab.js"><link rel="prefetch" href="/docs/assets/js/85.eb6801e6.js"><link rel="prefetch" href="/docs/assets/js/86.f6a112d2.js"><link rel="prefetch" href="/docs/assets/js/87.c94ad74f.js"><link rel="prefetch" href="/docs/assets/js/89.65ebcdc0.js"><link rel="prefetch" href="/docs/assets/js/9.343aa982.js"><link rel="prefetch" href="/docs/assets/js/90.09ae624a.js"><link rel="prefetch" href="/docs/assets/js/91.4cd8df07.js"><link rel="prefetch" href="/docs/assets/js/92.c72363e9.js"><link rel="prefetch" href="/docs/assets/js/93.b4fe66f5.js"><link rel="prefetch" href="/docs/assets/js/94.b68c1a99.js"><link rel="prefetch" href="/docs/assets/js/95.8ff14405.js"><link rel="prefetch" href="/docs/assets/js/96.ac5f74f5.js"><link rel="prefetch" href="/docs/assets/js/97.80433882.js"><link rel="prefetch" href="/docs/assets/js/98.38e89a2f.js"><link rel="prefetch" href="/docs/assets/js/99.4d1c97c8.js">
+    <link rel="stylesheet" href="/docs/assets/css/0.styles.80adea03.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/docs/" class="home-link router-link-active"><!----> <span class="site-name">Nx-website-component</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Install</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/chapter1/" class="sidebar-link">Introduction</a></li><li><a href="/docs/chapter1/dev.html" class="sidebar-link">开发</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>NxBg 背景图</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/chapter2/Props&amp;Event.html" class="sidebar-link">使用</a></li><li><a href="/docs/chapter2/demo.html" class="sidebar-link">代码演示</a></li><li><a href="/docs/chapter2/problem.html" class="sidebar-link">遗留问题</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>NxCard 卡片</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/chapter3/entry.html" class="sidebar-link">使用</a></li><li><a href="/docs/chapter3/demo.html" class="sidebar-link">代码演示</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>NxFooter 底部</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/chapter4/entry.html" class="sidebar-link">使用</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>NxArt 文章</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/chapter5/entry.html" class="sidebar-link">使用</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>NxSlide 幻灯片</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/chapter6/entry.html" class="sidebar-link">使用</a></li><li><a href="/docs/chapter6/demo.html" class="sidebar-link">代码演示</a></li><li><a href="/docs/chapter6/feat.html" class="sidebar-link">feat</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>版本记录</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/chapter7/entry.html" class="sidebar-link">修复记录</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>HTTP</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/http/diff.html" class="sidebar-link">http1和http2的区别</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>CSS</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/css/GPU.html" class="sidebar-link">GPU 加速</a></li><li><a href="/docs/css/backflow.html" class="sidebar-link">回流/重塑</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>渲染优化</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/browser/chapter1.html" class="sidebar-link">渲染优化</a></li><li><a href="/docs/browser/chapter2.html" class="sidebar-link">回流与重绘</a></li><li><a href="/docs/browser/chapter3.html" class="sidebar-link">使用 fastdom 解决布局抖动</a></li><li><a href="/docs/browser/chapter4.html" class="sidebar-link">复合线程与图层</a></li><li><a href="/docs/browser/chapter5.html" class="sidebar-link">避免重绘</a></li><li><a href="/docs/browser/chapter6.html" class="sidebar-link">高频事件防抖</a></li><li><a href="/docs/browser/chapter7.html" class="sidebar-link">React 时间调度的实现</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>HTML&amp;CSS优化</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/htmlOptimization/chapter1.html" class="sidebar-link">HTML &amp; CSS</a></li><li><a href="/docs/htmlOptimization/chapter2.html" class="sidebar-link">CSS contain</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>代码优化</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/jsOptimization/chapter1.html" class="sidebar-link">缩短 JS 解析时间</a></li><li><a href="/docs/jsOptimization/chapter2.html" class="sidebar-link">配合 V8 有效优化代码</a></li><li><a href="/docs/jsOptimization/chapter3.html" class="sidebar-link">函数优化</a></li><li><a href="/docs/jsOptimization/chapter4.html" class="sidebar-link">对象优化</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>资源压缩</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/sourcelOptimization/chapter1.html" class="sidebar-link">图片加载优化</a></li><li><a href="/docs/sourcelOptimization/chapter2.html" class="sidebar-link">字体优化</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Webpack优化</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/webpack/chapter1.html" class="sidebar-link">webpack 优化配置</a></li><li><a href="/docs/webpack/chapter2.html" class="sidebar-link">依赖优化</a></li><li><a href="/docs/webpack/chapter3.html" class="sidebar-link">Code Splitting</a></li><li><a href="/docs/webpack/chapter4.html" class="sidebar-link">资源压缩</a></li><li><a href="/docs/webpack/chapter5.html" class="sidebar-link">Webpack 缓存</a></li><li><a href="/docs/webpack/chapter6.html" class="sidebar-link">webpack 性能检测和分析工具</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>传输加载优化</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/transmission/chapter1.html" class="sidebar-link">启用压缩 GZIP</a></li><li><a href="/docs/transmission/chapter2.html" class="sidebar-link">启用 Keep Alive</a></li><li><a href="/docs/transmission/chapter3.html" aria-current="page" class="active sidebar-link">HTTP 资源缓存</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs/transmission/chapter3.html#cache-control-expire" class="sidebar-link">Cache-Control/Expire</a></li><li class="sidebar-sub-header"><a href="/docs/transmission/chapter3.html#last-modified-if-modified-since" class="sidebar-link">Last-Modified + If-Modified-Since</a></li><li class="sidebar-sub-header"><a href="/docs/transmission/chapter3.html#e-tag-if-none-match" class="sidebar-link">E-Tag + If-None-Match</a></li><li class="sidebar-sub-header"><a href="/docs/transmission/chapter3.html#nginx-配置" class="sidebar-link">Nginx 配置</a></li><li class="sidebar-sub-header"><a href="/docs/transmission/chapter3.html#nginx-demo" class="sidebar-link">Nginx-Demo</a></li></ul></li><li><a href="/docs/transmission/chapter4.html" class="sidebar-link">Service Workers</a></li><li><a href="/docs/transmission/chapter5.html" class="sidebar-link">HTTP2</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>js</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/js/object.html" class="sidebar-link">Object 属性定义</a></li><li><a href="/docs/js/offset.html" class="sidebar-link">offset 相关属性</a></li><li><a href="/docs/js/client.html" class="sidebar-link">client 相关属性</a></li><li><a href="/docs/js/scroll.html" class="sidebar-link">scroll 相关属性</a></li><li><a href="/docs/js/page.html" class="sidebar-link">page 相关属性</a></li><li><a href="/docs/js/bodyOffset.html" class="sidebar-link">计算元素距离 body 的偏移量</a></li><li><a href="/docs/js/getSize.html" class="sidebar-link">获取隐藏元素宽高值</a></li><li><a href="/docs/js/notification.html" class="sidebar-link">Notification</a></li><li><a href="/docs/js/getBoundingClientRect.html" class="sidebar-link">Element.getBoundingClientRect</a></li><li><a href="/docs/js/draggable.html" class="sidebar-link">draggable HTML 拖拽</a></li><li><a href="/docs/js/getImgSize.html" class="sidebar-link">获取图片原始尺寸</a></li><li><a href="/docs/js/node.html" class="sidebar-link">NodeType 元素节点属性</a></li><li><a href="/docs/js/fade.html" class="sidebar-link">JS 实现 JQ-fadeIn,fadeout</a></li><li><a href="/docs/js/location.html" class="sidebar-link">URL-location 对象</a></li><li><a href="/docs/js/decode.html" class="sidebar-link">URL 解码和编码</a></li><li><a href="/docs/js/loadingImg.html" class="sidebar-link">渐进式的图片懒加载$</a></li><li><a href="/docs/js/urlSearchParams.html" class="sidebar-link">urlSearchParams</a></li><li><a href="/docs/js/getComputedStyle.html" class="sidebar-link">Window.getComputedStyle</a></li><li><a href="/docs/js/videoToImg.html" class="sidebar-link">上传视频生成缩略图，上传图片生成缩略图</a></li><li><a href="/docs/js/cloneDeep.html" class="sidebar-link">简易深拷贝+对象合并</a></li><li><a href="/docs/js/promise.html" class="sidebar-link">Promise 零碎知识点</a></li><li><a href="/docs/js/bind.html" class="sidebar-link">bind 函数传参</a></li><li><a href="/docs/js/modules.html" class="sidebar-link">ESM和CJS区别</a></li><li><a href="/docs/js/eventLoop.html" class="sidebar-link">EventLoop</a></li><li><a href="/docs/js/requestAnimationFrame.html" class="sidebar-link">requestAnimationFrame &amp; requestIdleCallback</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>红宝书</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/redbook/function.html" class="sidebar-link">Function 类型</a></li><li><a href="/docs/redbook/designMode.html" class="sidebar-link">设计模式</a></li><li><a href="/docs/redbook/packingType.html" class="sidebar-link">基本包装类型</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>web socket</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/socket/pubNabVue.html" class="sidebar-link">pubnub-vue</a></li><li><a href="/docs/socket/hello.html" class="sidebar-link">Demo</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>nodejs</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/nodejs/base.html" class="sidebar-link">基础</a></li><li><a href="/docs/nodejs/zip.html" class="sidebar-link">压缩文件</a></li><li><a href="/docs/nodejs/unZip.html" class="sidebar-link">解压</a></li><li><a href="/docs/nodejs/inspect.html" class="sidebar-link">inspect 协议</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>perfect</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/performance/target.html" class="sidebar-link">性能指标和优化目标</a></li><li><a href="/docs/performance/RAIL.html" class="sidebar-link">RAIL测量标准</a></li><li><a href="/docs/performance/webPageTest.html" class="sidebar-link">WebPageTest</a></li><li><a href="/docs/performance/lightHouse.html" class="sidebar-link">LightHouse分析页面性能</a></li><li><a href="/docs/performance/apis.html" class="sidebar-link">常用性能测量API</a></li><li><a href="/docs/performance/Rendering.html" class="sidebar-link">渲染优化</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>koa</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/koa/core.html" class="sidebar-link">简单实现 koa 核心原理</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>vue</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/vue/defineReactive.html" class="sidebar-link">响应式对象</a></li><li><a href="/docs/vue/$nextTick.html" class="sidebar-link">\$nextTick</a></li><li><a href="/docs/vue-source/chapter1.html" class="sidebar-link">New Vue 发生了什么</a></li><li><a href="/docs/vue-source/chapter2.html" class="sidebar-link">Vue 实例挂载实现</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>vue3</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/vue3/chapter1.html" class="sidebar-link">ref &amp; reactive</a></li><li><a href="/docs/vue3/chapter2.html" class="sidebar-link">新增</a></li><li><a href="/docs/vue3/chapter3.html" class="sidebar-link">v-model</a></li><li><a href="/docs/vue3/chapter4.html" class="sidebar-link">vuex</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="http-资源缓存"><a href="#http-资源缓存" class="header-anchor">#</a> HTTP 资源缓存</h1> <blockquote><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching" target="_blank" rel="noopener noreferrer">HTTP 缓存<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>本质上就是为了提高资源重复访问的速度。</p></blockquote> <table><thead><tr><th></th> <th><strong>获取资源形式</strong></th> <th><strong>状态码</strong></th> <th><strong>发送请求到服务器</strong></th></tr></thead> <tbody><tr><td><strong>强缓存</strong></td> <td>从缓存取</td> <td>200（from cache）</td> <td>否，直接从缓存取</td></tr> <tr><td><strong>协商缓存</strong></td> <td>从缓存取</td> <td>304（not modified）</td> <td>是，正如其名，通过服务器来告知缓存是否可用</td></tr></tbody></table> <h2 id="cache-control-expire"><a href="#cache-control-expire" class="header-anchor">#</a> Cache-Control/Expire</h2> <p>Cache-Control 叫做强缓存。</p> <blockquote><p>浏览器在请求某一资源时，会先获取该资源缓存的 header 信息，判断是否命中强缓存（cache-control 和 expires 信息），若命中直接从缓存中获取资源信息，包括缓存 header 信息；本次请求根本就不会与服务器进行通信。</p></blockquote> <h3 id="强缓存相关-header-字段"><a href="#强缓存相关-header-字段" class="header-anchor">#</a> 强缓存相关 header 字段</h3> <ul><li>expires，这是 http1.0 时的规范；它的值为一个绝对时间的 GMT 格式的时间字符串，如 Mon, 10 Jun 2015 21:31:12 GMT，如果发送请求的时间在 expires 之前，那么本地缓存始终有效，否则就会发送请求到服务器来获取资源</li></ul> <ul><li><p>cache-control：max-age=number，这是 http1.1 时出现的 header 信息，主要是利用该字段的 max-age 值来进行判断，它是一个相对值；资源第一次的请求时间和 Cache-Control 设定的有效期，计算出一个资源过期时间，再拿这个过期时间跟当前的请求时间比较，如果请求时间在过期时间之前，就能命中缓存，否则就不行；cache-control 除了该字段外，还有下面几个比较常用的设置值：</p> <ul><li>no-cache：不使用本地缓存。需要使用缓存协商，先与服务器确认返回的响应是否被更改，如果之前的响应中存在 ETag，那么请求的时候会与服务端验证，如果资源未被更改，则可以避免重新下载。</li></ul> <ul><li><p>no-store：直接禁止游览器缓存数据，每次用户请求该资源，都会向服务器发送一个请求，每次都会下载完整的资源。</p></li> <li><p>public：可以被所有的用户缓存，包括终端用户和 CDN 等中间代理服务器(service worker 缓存)。</p></li> <li><p>private：只能被终端用户的浏览器缓存，不允许 CDN 等中继缓存服务器对其缓存。</p></li></ul></li></ul> <blockquote><p>注意：如果 cache-control 与 expires 同时存在的话，cache-control 的优先级高于 expires</p></blockquote> <blockquote><p>Cache-Control:max-age=0(0 秒后缓存失效);设置成为 0 就表示第一次获取之后下一次缓存立即失效了，其实就和 no-cache 差不多的效果。</p></blockquote> <blockquote><p>Cache-Control:no-store;表示不使用缓存，直接向后台发送请求获取资源（强缓存和协商缓存都不会走）。</p></blockquote> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>当当前资源没有命中强缓存的时候，此时就会去命中协商缓存。但是当使用<code>no-store</code>就会直接重新下载并不去会尝试查看是否命中协商缓存。</p></div> <h2 id="last-modified-if-modified-since"><a href="#last-modified-if-modified-since" class="header-anchor">#</a> Last-Modified + If-Modified-Since</h2> <p>二者的值都是 GMT 格式的时间字符串，具体过程：</p> <ul><li><p>浏览器第一次跟服务器请求一个资源，服务器在返回这个资源的同时，在 respone 的 header 加上 Last-Modified 的 header，这个 header 表示这个资源在服务器上的最后修改时间</p></li> <li><p>浏览器再次跟服务器请求这个资源时，在 request 的 header 上加上 If-Modified-Since 的 header，这个 header 的值就是上一次请求时返回的 Last-Modified 的值</p></li> <li><p>服务器再次收到资源请求时，根据浏览器传过来 If-Modified-Since 和资源在服务器上的最后修改时间判断资源是否有变化，如果没有变化则返回 304 Not Modified，但是不会返回资源内容；如果有变化，就正常返回资源内容。当服务器返回 304 Not Modified 的响应时，response header 中不会再添加 Last-Modified 的 header，因为既然资源没有变化，那么 Last-Modified 也就不会改变，这是服务器返回 304 时的 response header</p></li> <li><p>浏览器收到 304 的响应后，就会从缓存中加载资源</p></li> <li><p>如果协商缓存没有命中，浏览器直接从服务器加载资源时，Last-Modified 的 Header 在重新加载的时候会被更新，下次请求时，If-Modified-Since 会启用上次返回的 Last-Modified 值</p></li></ul> <h2 id="e-tag-if-none-match"><a href="#e-tag-if-none-match" class="header-anchor">#</a> E-Tag + If-None-Match</h2> <p>这两个值是由服务器生成的每个资源的唯一标识字符串，只要资源有变化就这个值就会改变；其判断过程与 Last-Modified/If-Modified-Since 类似，与 Last-Modified 不一样的是，当服务器返回 304 Not Modified 的响应时，由于 ETag 重新生成过，response header 中还会把这个 ETag 返回，即使这个 ETag 跟之前的没有变化。</p> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>关于<code>E-Tag</code>和<code>Last-Modified</code>区别有很多文章介绍了，这里就不做简介了。</p> <p>同时出现时，<code>Etag</code>优先级会高于<code>Last-Modified</code>。</p> <p>默认<code>nginx</code>开启<code>Etag</code>和<code>Last-Modified</code>这两个缓存策略。</p></div> <h2 id="nginx-配置"><a href="#nginx-配置" class="header-anchor">#</a> Nginx 配置</h2> <h3 id="html"><a href="#html" class="header-anchor">#</a> html</h3> <div class="language-JS extra-class"><pre class="language-js"><code> # 缓存配置
+         <span class="token keyword">if</span> <span class="token punctuation">(</span>$request_filename <span class="token operator">~</span><span class="token operator">*</span> <span class="token punctuation">.</span><span class="token operator">*</span>\<span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token operator">?</span><span class="token operator">:</span>htm<span class="token operator">|</span>html<span class="token punctuation">)</span>$<span class="token punctuation">)</span>
+
+              <span class="token punctuation">{</span>
+
+                add_header Cache<span class="token operator">-</span>Control <span class="token string">&quot;no-cache, must-revalidate&quot;</span><span class="token punctuation">;</span>
+
+                add_header <span class="token string">&quot;Pragma&quot;</span> <span class="token string">&quot;no-cache&quot;</span><span class="token punctuation">;</span>
+
+                add_header <span class="token string">&quot;Expires&quot;</span> <span class="token string">&quot;0&quot;</span><span class="token punctuation">;</span>
+
+              <span class="token punctuation">}</span>
+</code></pre></div><p>关于有关 html 文件的请求，一般我们都不希望<code>html</code>缓存。因为传统单页面前端应用，当<code>html</code>发生改变的时候我们都是希望它可以及时更新，(否则 html 缓存住了使用的旧的资源路径就展示的还是旧的页面)。</p> <p>所以给<code>html</code>文件添加了<code>cache_control:no-cache</code>，<strong>让<code>html</code>直接走协商缓存，如果文件内容不发生改变那么就继续使用缓存，如果变化了(基于 webpack，html 中引用的 js，css 资源修改后文件名都会存在唯一的 hash，html 引用就会发生改变)，那么就无法命中协商缓存从而重新请求。</strong></p> <p><code>Pragma</code> 和 <code>Expires:0</code>(立即过期)，都是对<code>cache-control</code>的兼容，他们都是告诉浏览器。每次需要<code>html</code>文件的时候，不需要浏览器缓存而是重新去服务端进行重新获取和验证(协商缓存)。</p> <h3 id="js-css"><a href="#js-css" class="header-anchor">#</a> JS&amp;CSS</h3> <div class="language- extra-class"><pre class="language-text"><code>
+if ($request_filename ~* .*\.(?:js|css)$)
+
+              {
+
+                expires      7d;
+
+              }
+</code></pre></div><p>这里的意思是说对于<code>css</code>和<code>js</code>文件服务器告诉浏览器，强制缓存 7 天的时间。当然这个时间可以跟随项目实际情况进行设置。</p> <blockquote><p>其实这里的 css 和 js 的过期时间不设置也可以，因为现代 web 应用中如果 html 改变，伴随的<code>css</code>和<code>js</code>都会因为修改造成<code>webpack</code>打包后生成文件的<code>contenthash</code>改变(文件名改变)。那么网站上 html 引入的资源路径都变化了，给用户的一定是会最新的 html 指向的新文件 css 和 js 文件。</p></blockquote> <h3 id="图片-视频"><a href="#图片-视频" class="header-anchor">#</a> 图片/视频</h3> <div class="language- extra-class"><pre class="language-text"><code>  if ($request_filename ~* .*\.(?:jpg|jpeg|gif|png|ico|cur|gz|svg|svgz|mp4|ogg|ogv|webm)$)
+
+              {
+
+                 expires      7d;
+
+              }
+</code></pre></div><p>对于图片/视频资源，一般来说可以设置一个比较长的时间让浏览器去进行强缓存。因为视频/图片/字体资源一般都不会怎么变化，所以设置一个较长的缓存时间会加快访问速度的。</p> <h2 id="nginx-demo"><a href="#nginx-demo" class="header-anchor">#</a> Nginx-Demo</h2> <div class="language- extra-class"><pre class="language-text"><code>#keepalive_timeout  0;
+
+    keepalive_timeout  65;
+
+    keepalive_requests 100;
+
+
+
+    gzip on;
+
+
+
+    gzip_min_length 1k;
+
+
+
+    gzip_comp_level 6;
+
+
+
+    gzip_types text/plain application/javascript application/x-javascript text/css application/xml text/xml text/javascript application/json;
+
+
+
+    gzip_static on;
+
+
+
+    gzip_vary on;
+
+
+
+    gzip_buffers 4 16k;
+
+
+
+   gzip_http_version 1.1;
+
+
+
+server {
+
+        listen       8080;
+
+        server_name  localhost;
+
+
+
+        #charset koi8-r;
+
+
+
+        #access_log  logs/host.access.log  main;
+
+
+
+        location / {
+
+            root   /Users/your_username/foldername;
+
+            index  index.html index.htm;
+
+            try_files $uri /index.html;
+
+            if ($request_filename ~* .*\.(?:htm|html)$)
+
+              {
+
+                add_header Cache-Control &quot;no-cache, must-revalidate&quot;;
+
+                add_header &quot;Pragma&quot; &quot;no-cache&quot;;
+
+                add_header &quot;Expires&quot; &quot;0&quot;;
+
+              }
+
+             if ($request_filename ~* .*\.(?:js|css)$)
+
+              {
+
+                expires      7d;
+
+              }
+
+             if ($request_filename ~* .*\.(?:jpg|jpeg|gif|png|ico|cur|gz|svg|svgz|mp4|ogg|ogv|webm)$)
+
+              {
+
+                 expires      7d;
+
+              }
+
+        }
+
+
+
+        #error_page  404              /404.html;
+
+
+
+        # redirect server error pages to the static page /50x.html
+
+        #
+
+        error_page   500 502 503 504  /50x.html;
+
+        location = /50x.html {
+
+            root   html;
+
+        }
+
+
+
+        # proxy the PHP scripts to Apache listening on 127.0.0.1:80
+
+        #
+
+        #location ~ \.php$ {
+
+        #    proxy_pass   http://127.0.0.1;
+
+        #}
+
+
+
+        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+
+        #
+
+        #location ~ \.php$ {
+
+        #    root           html;
+
+        #    fastcgi_pass   127.0.0.1:9000;
+
+        #    fastcgi_index  index.php;
+
+        #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+
+        #    include        fastcgi_params;
+
+        #}
+
+
+
+        # deny access to .htaccess files, if Apache's document root
+
+        # concurs with nginx's one
+
+        #
+
+        #location ~ /\.ht {
+
+        #    deny  all;
+
+        #}
+
+    }
+
+
+
+
+
+
+
+
+
+# HTTPS server
+
+    #
+
+    server {
+
+        listen       843 ssl http2;
+
+        server_name  localhost;
+
+
+
+        ssl on;
+
+
+
+        ssl_certificate      /Users/your_username/foldername/ssl/server.crt;
+
+        ssl_certificate_key  /Users/your_username/foldername/ssl/server.key;
+
+
+
+        ssl_session_cache    shared:SSL:1m;
+
+        ssl_session_timeout  5m;
+
+
+
+        ssl_ciphers  HIGH:!aNULL:!MD5;
+
+        ssl_prefer_server_ciphers  on;
+
+
+
+        location / {
+
+            root   /Users/your_username/foldername;
+
+            index  index.html index.htm;
+
+            try_files $uri /index.html;
+
+            http2_push /img/me0.jpg;
+
+            http2_push /img/me1.jpg;
+
+            http2_push /img/me2.jpg;
+
+        }
+
+    }
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/docs/transmission/chapter2.html" class="prev">
+        启用 Keep Alive
+      </a></span> <span class="next"><a href="/docs/transmission/chapter4.html">
+        Service Workers
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/docs/assets/js/app.990234d8.js" defer></script><script src="/docs/assets/js/2.f0b9337b.js" defer></script><script src="/docs/assets/js/88.630f83d1.js" defer></script>
+  </body>
+</html>
