@@ -6,6 +6,14 @@
 
 ## 自定义组件上使用 v-model
 
+::: tip
+3.0 版本中自定义组件中使用`v-model`需要两个步骤：
+
+- 组件上使用 v-model 传递值。
+- 默认子组件使用`modelValue`接受，然后通过组件内部触发`emit('update:modelValue',val)`进行更新父组件值。
+
+:::
+
 自定义组件上的`v-model`相较于 2.x 发生了本质上的变化，**同时移除了 2.x 的 sync 修饰符使用 v-model 进行了代替**。
 
 [v-model3.0 文档](https://vue3js.cn/docs/zh/guide/migration/v-model.html#%E6%A6%82%E8%A7%88)

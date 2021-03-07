@@ -200,7 +200,12 @@ module.exports = {
       {
         title: "vue3",
         collapsable: false,
-        children: ["vue3/chapter1", "vue3/chapter2", "vue3/chapter3"],
+        children: [
+          "vue3/chapter1",
+          "vue3/chapter2",
+          "vue3/chapter3",
+          "vue3/chapter4",
+        ],
       },
     ],
   },
