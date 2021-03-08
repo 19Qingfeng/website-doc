@@ -276,6 +276,8 @@ function toRef(object, key) {
 
 > 所以才说`toRef`方法实质上是对于传入对象的引用。
 
+同时也可以看到`toRef`对于原本`Object`上不存在的属性也会创建对应的`key`(当调用`set value`时，会在原本`reactive object`中创建一个新的属性。因为 Vue3 使用 Proxy 监听的是整个对象，所以对于`object`新增的属性确保了响应式。)
+
 ### `toRefs`
 
 ```js
@@ -296,3 +298,8 @@ function toRefs(object) {
 可以看到`toRefs`源码，传入一个`Object`。首先检查这个`obj`是否是一个响应式对象，如果对于一个响应式对象调用`toRefs`方法会打出一行警告。
 
 其实内部也就是对于`object`每一个`key`进行`toRef`属性的调用。
+
+`toRefs`对于`reactive object`中不存在的属性就不会变成响应式，
+因为`toRefs`本质上是对于`object`属性的遍历，如果不存在那么就不会创建。
+
+> toRef will return a usable ref even if the source property doesn't currently exist. This makes it especially useful when working with optional props, which wouldn't be picked up by toRefs.
