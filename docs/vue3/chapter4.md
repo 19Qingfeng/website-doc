@@ -2,7 +2,7 @@
 
 > 首先 vuex4 版本对于`ts`的支持我认为仍然是不够好，但是好消息是在将来的`vuex5`版本开发人员已经将`ts`重新适配提上日程并且已经在开发阶段了。
 
-### MapState
+## MapState
 
 `compositionApi`中封装`MapState`，同理还可以封装`mapAction`,`mapMutations`,`mapGetters`。
 
@@ -156,7 +156,7 @@ setup() {
 
 是不是看上去有点眼熟，对的就是类似于 mapState 的方式，不过是我们自定义的方式，同样的思路，可以封装我们自己的 mutation、action 等。
 
-### 结合 TS
+## 结合 TS
 
 在定义每个 module 时，我们都声明了 interface，我们都知道这是 typescript 的类型定义。但是我们用到了吗：
 
@@ -318,3 +318,20 @@ const module: Module<HomeState, StateType> = {
 
 > 针对上述这问题，目前都提出来对于`vuex4`版本对于`ts`的不友好性能。
 > :::
+
+## Getters 中使用参数
+
+> You can also pass arguments to getters by returning a function. This is particularly useful when you want to query an array in the store:
+
+```js
+getters: {
+  // ...
+  getTodoById: (state) => (id) => {
+    return state.todos.find((todo) => todo.id === id);
+  };
+}
+
+store.getters.getTodoById(2); // -> { id: 2, text: '...', done: false }
+```
+
+> get 中使用参数,可以返回一个函数然后使用`getters`传参。
