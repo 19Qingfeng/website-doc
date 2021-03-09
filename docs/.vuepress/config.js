@@ -126,6 +126,7 @@ module.exports = {
           "js/page",
           "js/bodyOffset",
           "js/getSize",
+          "js/jwt",
           "js/notification",
           "js/getBoundingClientRect",
           "js/draggable",
