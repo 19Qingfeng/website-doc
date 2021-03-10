@@ -51,7 +51,7 @@ module.exports = {
       {
         title: "CSS",
         collapsable: false,
-        children: ["css/GPU", "css/backflow"],
+        children: ["css/GPU", "css/backflow", "css/props"],
       },
       {
         title: "渲染优化",
