@@ -207,6 +207,7 @@ module.exports = {
           "vue3/chapter3",
           "vue3/chapter4",
           "vue3/chapter5",
+          "vue-source/chapter3",
         ],
       },
     ],
