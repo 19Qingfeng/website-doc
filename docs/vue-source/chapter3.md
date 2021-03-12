@@ -359,4 +359,4 @@ if (isObject(res)) {
 
 判断取到的值是否是一个`object`，如果对于`reactive`对象的属性，它的值仍然是一个对象，那么`vue`会再次对于这个对象进行`reactive`进行包装。
 
-最终返回`res`。
+最终返回访问的`reactive[key]`的值`res`。
