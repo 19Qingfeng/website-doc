@@ -186,7 +186,7 @@ module.exports = {
       {
         title: "koa",
         collapsable: false,
-        children: ["koa/core"],
+        children: ["koa/chapter1", "koa/core"],
       },
       {
         title: "vue",

@@ -51,3 +51,233 @@ http2 只能跑在 https 协议下。
 #### Nginx 配置
 
 - Server Push
+
+* http 2
+
+* 多路复用(默认)
+
+## Nginx 前端配置
+
+```
+    #keepalive_timeout  0;
+
+    keepalive_timeout  65;
+
+    keepalive_requests 100;
+
+
+
+    gzip on;
+
+
+
+    gzip_min_length 1k;
+
+
+
+    gzip_comp_level 6;
+
+
+
+    gzip_types text/plain application/javascript application/x-javascript text/css application/xml text/xml text/javascript application/json;
+
+
+
+    gzip_static on;
+
+
+
+    gzip_vary on;
+
+
+
+    gzip_buffers 4 16k;
+
+
+
+   gzip_http_version 1.1;
+
+
+
+server {
+
+        listen       8080;
+
+        server_name  localhost;
+
+
+
+        #charset koi8-r;
+
+
+
+        #access_log  logs/host.access.log  main;
+
+
+
+        location / {
+
+            root   /Users/your_username/foldername;
+
+            index  index.html index.htm;
+
+            try_files $uri /index.html;
+
+            if ($request_filename ~* .*\.(?:htm|html)$)
+
+              {
+
+                add_header Cache-Control "no-cache, must-revalidate";
+
+                add_header "Pragma" "no-cache";
+
+                add_header "Expires" "0";
+
+              }
+
+             if ($request_filename ~* .*\.(?:js|css)$)
+
+              {
+
+                expires      7d;
+
+              }
+
+             if ($request_filename ~* .*\.(?:jpg|jpeg|gif|png|ico|cur|gz|svg|svgz|mp4|ogg|ogv|webm)$)
+
+              {
+
+                 expires      7d;
+
+              }
+
+        }
+
+
+
+        #error_page  404              /404.html;
+
+
+
+        # redirect server error pages to the static page /50x.html
+
+        #
+
+        error_page   500 502 503 504  /50x.html;
+
+        location = /50x.html {
+
+            root   html;
+
+        }
+
+
+
+        # proxy the PHP scripts to Apache listening on 127.0.0.1:80
+
+        #
+
+        #location ~ \.php$ {
+
+        #    proxy_pass   http://127.0.0.1;
+
+        #}
+
+
+
+        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+
+        #
+
+        #location ~ \.php$ {
+
+        #    root           html;
+
+        #    fastcgi_pass   127.0.0.1:9000;
+
+        #    fastcgi_index  index.php;
+
+        #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+
+        #    include        fastcgi_params;
+
+        #}
+
+
+
+        # deny access to .htaccess files, if Apache's document root
+
+        # concurs with nginx's one
+
+        #
+
+        #location ~ /\.ht {
+
+        #    deny  all;
+
+        #}
+
+    }
+
+
+
+
+
+
+
+
+
+# HTTPS server
+
+    #
+
+    server {
+
+        listen       443 ssl http2;
+
+        server_name  localhost;
+
+
+
+        ssl on;
+
+
+
+        ssl_certificate      /Users/your_username/foldername/ssl/server.crt;
+
+        ssl_certificate_key  /Users/your_username/foldername/ssl/server.key;
+
+
+
+        ssl_session_cache    shared:SSL:1m;
+
+        ssl_session_timeout  5m;
+
+
+
+        ssl_ciphers  HIGH:!aNULL:!MD5;
+
+        ssl_prefer_server_ciphers  on;
+
+
+
+        location / {
+
+            root   /Users/your_username/foldername;
+
+            index  index.html index.htm;
+
+            try_files $uri /index.html;
+
+            http2_push /img/me0.jpg;
+
+            http2_push /img/me1.jpg;
+
+            http2_push /img/me2.jpg;
+
+        }
+
+    }
+
+
+```
