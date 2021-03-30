@@ -123,8 +123,9 @@ module.exports = {
         children: [
           'design/chapter',
           'design/chapter1',
-          'design/chapter2',
           'design/chapter3',
+          'design/chapter4',
+          'design/chapter5',
         ],
       },
       {
