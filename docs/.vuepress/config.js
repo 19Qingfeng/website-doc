@@ -64,6 +64,7 @@ module.exports = {
           'browser/chapter5.md',
           'browser/chapter6.md',
           'browser/chapter7.md',
+          'browser/chapter8.md',
         ],
       },
       {
@@ -117,6 +118,16 @@ module.exports = {
         ],
       },
       {
+        title: '设计模式',
+        collapsable: false,
+        children: [
+          'design/chapter',
+          'design/chapter1',
+          'design/chapter2',
+          'design/chapter3',
+        ],
+      },
+      {
         title: 'js',
         collapsable: false,
         children: [
@@ -147,6 +158,11 @@ module.exports = {
           'js/eventLoop',
           'js/requestAnimationFrame',
         ],
+      },
+      {
+        title: 'TS',
+        collapsable: false,
+        children: ['ts/chapter1'],
       },
       {
         title: '红宝书',
