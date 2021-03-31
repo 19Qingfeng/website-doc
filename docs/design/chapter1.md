@@ -93,3 +93,125 @@ trip.endTip();
 - 车辆进入时，摄像头可以识别车辆的车牌号和时间。
 
 - 车辆离开时，出口显示器显示车牌号和停车时长。
+
+::: tip
+总体思路，抽象出不同种类的类进行不同的职责:
+
+1. Car 汽车类 拥有车牌号
+2. Monitor 显示屏类 每个停车场拥有一个显示屏
+3. Camera 监控类 每个停车场拥有一个监控
+4. Space 层 每个停车场中的每一层
+5. Floor 车位 每层中的每一个车位构成(类) 拥有状态 表示是否是空车位
+6. Park 停车场 它由一层一层(类) 监控 显示屏 构成
+
+:::
+
+```js
+class Car {
+  constructor(number) {
+    this.number = number;
+  }
+}
+
+class Monitor {
+  show(inDate, number) {
+    const range = Date.now() - inDate;
+    console.log('车牌号' + number + '停留时间---' + range);
+    return {
+      inDate,
+      number,
+    };
+  }
+}
+
+class Camera {
+  shot(car) {
+    return {
+      number: car.number,
+      date: Date.now(),
+    };
+  }
+}
+
+class Space {
+  constructor() {
+    this.isEmpty = true;
+  }
+  static createSpace() {
+    return new Space();
+  }
+  in() {
+    this.isEmpty = false;
+  }
+  out() {
+    this.isEmpty = true;
+  }
+}
+
+class Floor {
+  constructor(index, count) {
+    this.index = index;
+    this.spaceList = Array.from({ length: count }).map(() =>
+      Space.createSpace()
+    );
+  }
+  emptySpace() {
+    return this.spaceList.filter((i) => {
+      return i.isEmpty;
+    }).length;
+  }
+}
+
+class Park {
+  constructor(floor) {
+    this.floor = floor || [];
+    this.camera = new Camera();
+    this.monitor = new Monitor();
+    this.cardList = {};
+  }
+  emptyPlace() {
+    let number = 0;
+    for (let i of this.floor) {
+      number += i.emptySpace();
+    }
+    console.log('当前剩余车位' + number);
+  }
+  in(car) {
+    // 显示空余车位
+    this.emptyPlace();
+    const { number, date } = this.camera.shot(car);
+    // 处理进入第几层 随机
+    const space = this.floor[0].spaceList[parseInt(Math.random() * 100) % 100];
+    this.cardList[number] = {
+      date,
+      space,
+    };
+    console.log('车辆进入->' + number);
+    space.in();
+  }
+  out(car) {
+    // 获得进入时间
+    const { date, space } = this.cardList[car.number];
+    this.monitor.show(date, car.number);
+    space.out(car);
+    delete this.cardList[car.number];
+  }
+}
+
+const park = new Park([
+  new Floor(1, 100),
+  new Floor(2, 100),
+  new Floor(3, 100),
+]);
+const car = new Car(10000);
+const car2 = new Car(20000);
+
+park.in(car);
+setTimeout(() => {
+  park.out(car);
+}, 200);
+
+park.in(car2);
+
+park.out(car2);
+```
