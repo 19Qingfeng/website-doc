@@ -17,3 +17,15 @@
 ::: tip
 `object-fit`属性是响应式的，会根据框大小变化而变化对应匹配内容。
 :::
+
+## touch-action
+
+[object-fit](https://developer.mozilla.org/zh-CN/docs/Web/CSS/touch-action)
+
+CSS 属性 `touch-action` 用于设置触摸屏用户如何操纵元素的区域(例如，浏览器内置的缩放功能)。
+
+允许用户区域内进行特定手势操作(通过设置)。
+
+## backface-visibility
+
+`backface-visibility` 属性定义当元素不面向屏幕时是否可见。(比如调用`transform3D`,`rotate`旋转时，元素背面正常来说应该是显示倒着的元素。但是使用`backface-visibility`会控制元素旋转时背面是否可见。)
