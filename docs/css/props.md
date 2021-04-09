@@ -22,9 +22,9 @@
 
 [object-fit](https://developer.mozilla.org/zh-CN/docs/Web/CSS/touch-action)
 
-CSS 属性 `touch-action` 用于设置触摸屏用户如何操纵元素的区域(例如，浏览器内置的缩放功能)。
+CSS 属性 `touch-action` 用于设置触摸屏用户如何操纵元素的区域(例如，浏览器内置的拖动功能)。
 
-允许用户区域内进行特定手势操作(通过设置)。
+允许用户区域内进行特定手势操作(通过设置)，-> 禁用浏览器默认的手势行为。
 
 ## backface-visibility
 
