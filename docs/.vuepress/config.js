@@ -188,6 +188,7 @@ module.exports = {
           'nodejs/zip',
           'nodejs/unZip',
           'nodejs/inspect',
+          'nodejs/file'
         ],
       },
       {
