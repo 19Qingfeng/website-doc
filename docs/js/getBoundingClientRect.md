@@ -23,3 +23,18 @@ rectObject = object.getBoundingClientRect();
 当计算边界矩形时，会考虑视口区域（或其他可滚动元素）内的滚动操作，**也就是说，当滚动位置发生了改变，top 和 left 属性值就会随之立即发生变化（因此，它们的值是相对于视口的，而不是绝对的）**。如果你需要获得相对于整个网页左上角定位的属性值，那么只要给 top、left 属性值加上当前的滚动位置（通过 window.scrollX 和 window.scrollY），这样就可以获取与当前的滚动位置无关的值。
 
 ![](https://mdn.mozillademos.org/files/15087/rect.png)
+
+## 计算元素是否出现在视口内
+
+利用的还是元素距离视口的位置小于视口的大小。
+
+> 注意即便变成了负值，那么也表示元素曾经出现过在屏幕中只是现在不显示了而已。(就比如滑动过)
+
+`vue-lazy`图片懒加载库源码就是这么判断的。
+
+```ts
+ isInView (): boolean {
+    const rect = this.el.getBoundingClientRect()
+    return rect.top < window.innerHeight && rect.left < window.innerWidth
+  }
+```
