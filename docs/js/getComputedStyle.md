@@ -17,7 +17,7 @@ let style = window.getComputedStyle(element, [pseudoElt]);
 返回的 style 是一个实时的 CSSStyleDeclaration 对象，当元素的样式更改时，它会自动更新本身。
 :::
 
-- getComputedStyle 与 getPropertyValue
+- getCo$$mputedStyle 与 getPropertyValue
 
 getComputedStyle 为何物呢，**DOM 中 getComputedStyle 方法可用来获取元素中所有可用的 css 属性列表，以数组形式返回，并且是只读的**。IE678 中则用 currentStyle 代替 。
 

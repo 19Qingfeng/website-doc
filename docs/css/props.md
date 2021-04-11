@@ -2,6 +2,57 @@
 
 > 罗列一些比较新的，或者偶尔知道的`css`技巧和属性。
 
+## text-align
+
+之前一直误解`text-align`仅仅对于文本生效。
+
+实际上 **`text-align`设置在块级元素中的时候，会作用到该块级元素下的所有行内元素进行产生效果。(比如 div 中的 span，img 等行内元素)**(属性可继承)
+
+::: tip
+注意作用到行内子元素的对其方式(整个子元素)。
+:::
+
+demo 自己看吧，比较简单的属性之前是因为自己理解错误。
+
+::: details
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .wrapper {
+        text-align: center;
+      }
+
+      span {
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <img
+        src="//upload-images.jianshu.io/upload_images/1371196-6be659e9bed600eb.png"
+        height="20"
+        width="20"
+        alt=""
+      />
+    </div>
+    <div class="wrapper">
+      <span>aaa</span>
+    </div>
+  </body>
+</html>
+```
+
+:::
+
 ## object-fit
 
 [object-fit](https://developer.mozilla.org/zh-CN/docs/Web/CSS/object-fit)
