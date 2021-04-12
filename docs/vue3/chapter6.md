@@ -31,14 +31,27 @@ id 为 app 的 DOM 元素的 innerHTML 内容将会被替换成为 app 根组件
 instance.\$el 返回组件实例渲染的根 DOM 元素(并非挂载元素。而是组件的根组件 DOM 元素.)
 
 ::: warning
-`app.mount(domEle)`返回返回的是 app 根组件实例,将 app 根组件实例挂载在了`domEle`上。和`domEle`的关系仅仅是将`domEle`的`innerHTML`进行替换为根组件。
+`app.mount(domEle)`返回返回的是 app 根组件实例对象,将 app 根组件实例挂载在了`domEle`上。和`domEle`的关系仅仅是将`domEle`的`innerHTML`进行替换为根组件。
 
-`instance.$el`返回的是渲染后的根组件实例 DOM 元素(app),而非挂载的 DOM 元素(domEle)。
+`instance.$el`返回的是渲染后的根组件实例 DOM 元素(app 组件),而非挂载的 DOM 元素(domEle)。
 
 :::
 
 ::: tip
 利用`createApp()`,`mount`,`$el`可以更优雅的做一些通过 JS 操作的组件，以及自定义指令的 DOM 选项。
+
+伪代码：
+
+```js
+import App from './App.vue';
+const app = createApp(App);
+const instance = app.mount(div);
+
+// 关联关系 appEle意思为 app(根)节点渲染后的DOM元素
+div.innerHTML = appEle; // 挂载其实就是做这一步
+instance.$el = appEle; // $el返回的就是挂载的组件实例(根)对象生成的DOM对象
+```
+
 :::
 
 `$el`
