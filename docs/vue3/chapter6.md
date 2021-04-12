@@ -30,7 +30,7 @@ id 为 app 的 DOM 元素的 innerHTML 内容将会被替换成为 app 根组件
 
 instance.\$el 返回组件实例渲染的根 DOM 元素(并非挂载元素。而是组件的根组件 DOM 元素.)
 
-::: tip
+::: warning
 `app.mount(domEle)`返回返回的是 app 根组件实例,将 app 根组件实例挂载在了`domEle`上。和`domEle`的关系仅仅是将`domEle`的`innerHTML`进行替换为根组件。
 
 `instance.$el`返回的是渲染后的根组件实例 DOM 元素(app),而非挂载的 DOM 元素(domEle)。
