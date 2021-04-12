@@ -92,7 +92,7 @@ export const getPictureByVideo = (url) => {
         .getContext('2d')
         .drawImage(video, 0, 0, canvas.width, canvas.height);
       const base64Url = decodeBase64Image(canvas.toDataURL('image/png', 1));
-      const imageBuffer = Buffer.from(base64Url, 'base64');
+      const imageBuffer = Buffer.fr$$om(base64Url, 'base64');
       resolve(imageBuffer);
       video = null;
       canvas.remove();
