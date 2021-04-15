@@ -153,6 +153,7 @@ module.exports = {
           'js/urlSearchParams',
           'js/getComputedStyle',
           'js/videoToImg.md',
+          'js/birthday',
           'js/cloneDeep',
           'js/promise',
           'js/bind',
