@@ -133,6 +133,7 @@ module.exports = {
         title: 'js',
         collapsable: false,
         children: [
+          'js/bit.md',
           'js/object',
           'js/offset',
           'js/client',
