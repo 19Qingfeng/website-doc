@@ -13,7 +13,7 @@
 
 > 内联元素以及没有 CSS 样式的元素的 clientWidth 属性值为 0。Element.clientWidth 属性表示元素的内部宽度，以像素计。该属性包括内边距 padding，但不包括边框 border、外边距 margin 和垂直滚动条（如果有的话）
 
-相对于offsetWidth/Height来说clientWidth/Height，仅仅包含padding+width/height,而不包含border。(注意同时包含滚动条宽高)
+相对于offsetWidth/Height来说clientWidth/Height，仅仅包含padding+width/height,而不包含border。(offsetWidth/Height注意同时包含滚动条宽高,而clientWidth/Height不包括滚动条。)
 
 ![png](https://developer.mozilla.org/@api/deki/files/185/=Dimensions-client.png)
 
