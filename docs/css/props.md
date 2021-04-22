@@ -80,3 +80,78 @@ CSS 属性 `touch-action` 用于设置触摸屏用户如何操纵元素的区域
 ## backface-visibility
 
 `backface-visibility` 属性定义当元素不面向屏幕时是否可见。(比如调用`transform3D`,`rotate`旋转时，元素背面正常来说应该是显示倒着的元素。但是使用`backface-visibility`会控制元素旋转时背面是否可见。)
+
+## backdrop-filter & filter
+
+### 语法
+
+> 对于下`backdrop-filter和filter`语法，其实一模一样。
+
+看下面的对比表：
+
+> backdrop-filter
+
+```css
+/* 关键字值 */
+backdrop-filter: none;
+
+/* URL方式外链SVG filter */
+backdrop-filter: url(zxx.svg#filter);
+
+/* <filter-function>值 */
+backdrop-filter: blur(2px);
+backdrop-filter: brightness(60%);
+backdrop-filter: contrast(40%);
+backdrop-filter: drop-shadow(4px 4px 10px blue);
+backdrop-filter: grayscale(30%);
+backdrop-filter: hue-rotate(120deg);
+backdrop-filter: invert(70%);
+backdrop-filter: opacity(20%);
+backdrop-filter: sepia(90%);
+backdrop-filter: saturate(80%);
+```
+
+> filter
+
+```css
+/* 关键字值 */
+filter: none;
+
+/* URL方式外链SVG filter */
+filter: url(zxx.svg#filter);
+
+/* <filter-function>值 */
+filter: blur(2px);
+filter: brightness(60%);
+filter: contrast(40%);
+filter: drop-shadow(4px 4px 10px blue);
+filter: grayscale(30%);
+filter: hue-rotate(120deg);
+filter: invert(70%);
+filter: opacity(20%);
+filter: sepia(90%);
+filter: saturate(80%);
+```
+
+各个滤镜方法对应含义如下表：
+
+|    滤镜     |   释义   |
+| :---------: | :------: |
+|    blur     |   模糊   |
+| brightness  |   亮度   |
+|  contrast   |  对比度  |
+| drop-shadow |   投影   |
+|  grayscale  |   灰度   |
+| hue-rotate  | 色调变化 |
+|   invert    |   反相   |
+|   opacity   |  透明度  |
+|  saturate   |  饱和度  |
+|    sepia    |   褐色   |
+
+然后各个滤镜大致效果可以参见之前这篇文章：“[FDCon2019 大会分享之滤镜与混合模式实录](https://www.zhangxinxu.com/wordpress/2019/06/fdcon2019-css-share/)”，这里就不一一展示了，唯一需要演示的就是文章一开始提到的毛玻璃效果。
+
+### backdrop-filter 和 filter 区别
+
+backdrop-filter 是让当前元素所在区域后面的内容模糊灰度或高亮之类，要想看到效果，需要元素本身半透明或者完全透明；而 filter 是让当前元素自身模糊灰度或高亮之类。
+
+我们来通过毛玻璃效果的案例来感受一下 backdrop-filter 的实际效果。
