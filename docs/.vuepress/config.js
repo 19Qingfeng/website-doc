@@ -138,6 +138,7 @@ module.exports = {
           'js/offset',
           'js/client',
           'js/scroll',
+          'js/blob',
           'js/page',
           'js/bodyOffset',
           'js/getSize',
@@ -190,7 +191,7 @@ module.exports = {
           'nodejs/zip',
           'nodejs/unZip',
           'nodejs/inspect',
-          'nodejs/file'
+          'nodejs/file',
         ],
       },
       {
