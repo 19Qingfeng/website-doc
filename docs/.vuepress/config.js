@@ -162,6 +162,7 @@ module.exports = {
           'js/modules',
           'js/eventLoop',
           'js/requestAnimationFrame',
+          'js/Knuth'
         ],
       },
       {
